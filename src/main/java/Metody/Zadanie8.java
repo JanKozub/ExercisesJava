@@ -19,6 +19,7 @@ public class Zadanie8 {
         if (c > a && c > b){
             if (Math.pow(c,2) == Math.pow(b,2) + Math.pow(a,2)){
                 return true;
+
             }
         }
         return false;
