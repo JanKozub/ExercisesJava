@@ -11,49 +11,33 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Cwiczenia$Zadanie2.ic" NAME="Zadanie2 Coverage Results" MODIFIED="1532099637335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Tablice.*</FILTER>
+    </SUITE>
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Obliczenia.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ObiektyiPakiety/Zadanie2/Obliczenia.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyNumber.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ObiektyiPakiety/Zadanie3/MyNumber.java">
+      <file leaf-file-name="Zadanie9.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie9.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="561">
-              <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
+              <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
               <folding>
-                <element signature="method#MyNumber#0;class#MyNumber#0" />
-                <element signature="method#isOdd#0;class#MyNumber#0" />
-                <element signature="method#isEven#0;class#MyNumber#0" />
-                <element signature="method#add#0;class#MyNumber#0" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Zadanie1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Tablice/Zadanie1.java">
+      <file leaf-file-name="Zadanie11.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie11.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Zadanie2.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Tablice/Zadanie2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+            <state relative-caret-position="272">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -82,7 +66,18 @@
         <option value="$PROJECT_DIR$/src/main/java/ObiektyiPakiety/Zadanie2/Prostokat.java" />
         <option value="$PROJECT_DIR$/src/main/java/ObiektyiPakiety/Zadanie2/Obliczenia.java" />
         <option value="$PROJECT_DIR$/src/main/java/ObiektyiPakiety/Zadanie3/MyNumber.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Tablice/Zadanie1.java" />
         <option value="$PROJECT_DIR$/src/main/java/Tablice/Zadanie2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie3/ArrayFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie3NieWiemOCoChodzi/ArrayFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie6.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie8.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie7.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie9.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie3NieWiemOCoChodzi/W zad 10 tez nwm o co biega" />
+        <option value="$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie11.java" />
       </list>
     </option>
   </component>
@@ -106,8 +101,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -139,21 +132,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Metody" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cwiczenia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cwiczenia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Tablice" type="462c0819:PsiDirectoryNode" />
+              <item name="PetleIInstrukcjeWarunkowe" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -182,61 +169,72 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Zadanie2">
+  <component name="RunManager" selected="Application.Zadanie11">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
-    <configuration name="MyNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ObiektyiPakiety.Zadanie3.MyNumber" />
+    <configuration name="Zadanie11" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PetleIInstrukcjeWarunkowe.Zadanie11" />
       <module name="Cwiczenia" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ObiektyiPakiety.Zadanie3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="Obliczenia" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ObiektyiPakiety.Zadanie2.Obliczenia" />
-      <module name="Cwiczenia" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ObiektyiPakiety.Zadanie2.*" />
+          <option name="PATTERN" value="PetleIInstrukcjeWarunkowe.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
     </configuration>
     <configuration name="Zadanie2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Tablice.Zadanie2" />
+      <option name="MAIN_CLASS_NAME" value="PetleIInstrukcjeWarunkowe.Zadanie2" />
       <module name="Cwiczenia" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Tablice.*" />
+          <option name="PATTERN" value="PetleIInstrukcjeWarunkowe.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
     </configuration>
     <configuration name="Zadanie6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Metody.Zadanie6" />
+      <option name="MAIN_CLASS_NAME" value="PetleIInstrukcjeWarunkowe.Zadanie6" />
       <module name="Cwiczenia" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Metody.*" />
+          <option name="PATTERN" value="PetleIInstrukcjeWarunkowe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Zadanie7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PetleIInstrukcjeWarunkowe.Zadanie7" />
+      <module name="Cwiczenia" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PetleIInstrukcjeWarunkowe.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
     </configuration>
     <configuration name="Zadanie8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Metody.Zadanie8" />
+      <option name="MAIN_CLASS_NAME" value="PetleIInstrukcjeWarunkowe.Zadanie8" />
       <module name="Cwiczenia" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Metody.*" />
+          <option name="PATTERN" value="PetleIInstrukcjeWarunkowe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Zadanie9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PetleIInstrukcjeWarunkowe.Zadanie9" />
+      <module name="Cwiczenia" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PetleIInstrukcjeWarunkowe.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -354,17 +352,17 @@
     </configuration>
     <list>
       <item itemvalue="Application.Zadanie6" />
+      <item itemvalue="Application.Zadanie7" />
       <item itemvalue="Application.Zadanie8" />
-      <item itemvalue="Application.Obliczenia" />
-      <item itemvalue="Application.MyNumber" />
-      <item itemvalue="Application.Zadanie2" />
+      <item itemvalue="Application.Zadanie9" />
+      <item itemvalue="Application.Zadanie11" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Zadanie2" />
-        <item itemvalue="Application.MyNumber" />
-        <item itemvalue="Application.Obliczenia" />
+        <item itemvalue="Application.Zadanie11" />
+        <item itemvalue="Application.Zadanie9" />
         <item itemvalue="Application.Zadanie8" />
+        <item itemvalue="Application.Zadanie7" />
         <item itemvalue="Application.Zadanie6" />
       </list>
     </recent_temporary>
@@ -381,16 +379,17 @@
       <updated>1531930673503</updated>
       <workItem from="1531930679847" duration="2782000" />
       <workItem from="1532030368673" duration="5141000" />
-      <workItem from="1532097691649" duration="835000" />
+      <workItem from="1532097691649" duration="2749000" />
+      <workItem from="1532128955599" duration="2995000" />
+      <workItem from="1532364898027" duration="9689000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8758000" />
+    <option name="totallyTimeSpent" value="23356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -402,7 +401,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46066564" weight="0.3280255" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46066564" weight="0.33227175" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -413,14 +412,15 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4969743" visible="true" weight="0.39808917" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4969743" weight="0.39808917" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info id="Nl-Palette" order="2" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Properties" order="3" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Properties" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32908705" />
     </layout>
   </component>
@@ -440,13 +440,13 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Tablice/Zadanie2.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie7.java</url>
           <line>11</line>
           <properties />
-          <option name="timeStamp" value="18" />
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="19" />
+      <option name="time" value="42" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -454,6 +454,30 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Tablice/Zadanie1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Tablice/Zadanie2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ObiektyiPakiety/Zadanie2/Obliczenia.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -465,12 +489,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
           <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
-          <folding>
-            <element signature="method#MyNumber#0;class#MyNumber#0" />
-            <element signature="method#isOdd#0;class#MyNumber#0" />
-            <element signature="method#isEven#0;class#MyNumber#0" />
-            <element signature="method#add#0;class#MyNumber#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -492,10 +510,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="30" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="30" />
-          <folding>
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#442#443#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -510,10 +524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-          <folding>
-            <element signature="e#772#773#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -526,17 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" selection-start-line="7" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Metody/Zadanie5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="30" />
-          <folding>
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#442#443#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -553,46 +552,120 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ObiektyiPakiety/Zadanie2/Obliczenia.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
+        <state relative-caret-position="347">
           <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ObiektyiPakiety/Zadanie3/MyNumber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
+        <state relative-caret-position="432">
           <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
-          <folding>
-            <element signature="method#MyNumber#0;class#MyNumber#0" />
-            <element signature="method#isOdd#0;class#MyNumber#0" />
-            <element signature="method#isEven#0;class#MyNumber#0" />
-            <element signature="method#add#0;class#MyNumber#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Tablice/Zadanie1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        <state relative-caret-position="204">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Tablice/Zadanie2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Metody/Zadanie5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie3NieWiemOCoChodzi/ArrayFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Metody/Zadanie8.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="84" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="84" />
+          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie8.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
           <folding>
-            <element signature="e#772#773#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
+            <element signature="e#257#265#0" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Tablice/Zadanie2.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie6.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <caret line="15" column="44" lean-forward="true" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie3NieWiemOCoChodzi/W zad 10 tez nwm o co biega">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie9.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie11.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
