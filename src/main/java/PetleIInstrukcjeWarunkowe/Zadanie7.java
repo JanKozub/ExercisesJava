@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Zadanie7 {
-    public static void podzielSlowo(String slowo){
+    public static void odwrocSlowo(String slowo){
         List<String> wynik = new ArrayList();
         for (int i=0; i<=slowo.length()-1;i++){
             wynik.add(i,Character.toString(slowo.charAt(i)));
@@ -15,6 +15,6 @@ public class Zadanie7 {
     }
 
     public static void main(String[] args) {
-        podzielSlowo("test");
+        odwrocSlowo("test");
     }
 }
