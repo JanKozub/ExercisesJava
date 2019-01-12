@@ -5,7 +5,7 @@ package Metody;
  */
 public class Zadanie6 {
 
-    public static double podniesDoPotegi(double iloscPoteg, double liczba){
+    public static double podniesDoPotegi(double iloscPoteg, double liczba) {
 
         double wynik = Math.pow(liczba,iloscPoteg);
 
