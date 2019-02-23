@@ -2,35 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a653fc-6c82-455c-84b1-004358fc5a54" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/ConstructionExceptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/SimpleException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_java5_16_0_2.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DataStructures/MyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DataStructures/MyLinkedListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_java5_17_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cwiczenia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Cwiczenia.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Metody/Zadanie6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Metody/Zadanie6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Metody/Zadanie5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Metody/Zadanie5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Metody/Zadanie6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Metody/Zadanie6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Metody/Zadanie8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Metody/Zadanie8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ObiektyiPakiety/Zadanie1/Human.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ObiektyiPakiety/Zadanie1/Human.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ObiektyiPakiety/Zadanie2/Obliczenia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ObiektyiPakiety/Zadanie2/Obliczenia.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ObiektyiPakiety/Zadanie2/Prostokat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ObiektyiPakiety/Zadanie2/Prostokat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ObiektyiPakiety/Zadanie3/MyNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ObiektyiPakiety/Zadanie3/MyNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie3NieWiemOCoChodzi/ArrayFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie3NieWiemOCoChodzi/ArrayFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PetleIInstrukcjeWarunkowe/Zadanie9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Tablice/Zadanie1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tablice/Zadanie1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Tablice/Zadanie2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tablice/Zadanie2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TypyProste/Zadanie2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TypyProste/Zadanie2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TypyProste/Zadanie3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TypyProste/Zadanie3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TypyProste/Zadanie4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TypyProste/Zadanie4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exception/SimpleException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exception/SimpleException.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,11 +20,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Cwiczenia$Zadanie2.ic" NAME="Zadanie2 Coverage Results" MODIFIED="1532099637335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>Tablice.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/Cwiczenia$Zadanie12.ic" NAME="Zadanie12 Coverage Results" MODIFIED="1532452185473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>PetleIInstrukcjeWarunkowe.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Cwiczenia$MyLinkedListTest.ic" NAME="MyLinkedListTest Coverage Results" MODIFIED="1550928489076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>DataStructures.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Cwiczenia$Zadanie2.ic" NAME="Zadanie2 Coverage Results" MODIFIED="1532099637335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Tablice.*</FILTER>
     </SUITE>
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -53,11 +35,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/exception/SimpleException.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DataStructures/MyLinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+            <state relative-caret-position="799">
+              <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+              <folding>
+                <element signature="e#1584#1585#0" expanded="true" />
+                <element signature="e#1611#1612#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/DataStructures/MyLinkedListTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="379">
+              <caret line="93" column="43" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,20 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/exception/ConstructionExceptions.java">
+        <entry file="jar:///opt/jdk-10.0.1/lib/src.zip!/java.base/jdk/internal/reflect/NativeMethodAccessorImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="600">
+              <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -89,6 +75,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -128,11 +115,13 @@
         <option value="$PROJECT_DIR$/src/main/java/TypyProste/Zadanie3.java" />
         <option value="$PROJECT_DIR$/src/main/java/PetleIInstrukcjeWarunkowe/Zadanie7.java" />
         <option value="$PROJECT_DIR$/src/main/java/TypyProste/Zadanie4.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Metody/Zadanie6.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/ConstructionExceptions.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/SimpleException.java" />
         <option value="$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/DataStructures/MyLinkedListTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DataStructures/MyLinkedList.java" />
       </list>
     </option>
   </component>
@@ -142,14 +131,36 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Cwiczenia" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Cwiczenia" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="1916" />
+    <option name="width" value="2568" />
+    <option name="height" value="1444" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -157,6 +168,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,27 +194,42 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Cwiczenia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cwiczenia" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Homework" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549807746551" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/git-bash.exe" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="DataStructures" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ObiektyiPakiety.Zadanie1" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ObiektyiPakiety.Zadanie1" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -217,7 +244,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ArraySorter">
+  <component name="RunManager" selected="JUnit.MyLinkedListTest">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -280,6 +307,14 @@
       <setting name="launchBrowserUrl" value="" />
       <setting name="depsClasspath" value="false" />
     </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -294,78 +329,91 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArraySorter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Homework.ArraySorter" />
-      <module name="Cwiczenia" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Homework.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConstructionExceptions" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exception.ConstructionExceptions" />
-      <module name="Cwiczenia" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exception.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SimpleException" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exception.SimpleException" />
-      <module name="Cwiczenia" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exception.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Zadanie4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TypyProste.Zadanie4" />
-      <module name="Cwiczenia" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TypyProste.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Zadanie7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PetleIInstrukcjeWarunkowe.Zadanie7" />
-      <module name="Cwiczenia" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="PetleIInstrukcjeWarunkowe.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyLinkedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cwiczenia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DataStructures.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DataStructures" />
+      <option name="MAIN_CLASS_NAME" value="DataStructures.MyLinkedListTest" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyLinkedListTest.testAddFirst" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cwiczenia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DataStructures.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DataStructures" />
+      <option name="MAIN_CLASS_NAME" value="DataStructures.MyLinkedListTest" />
+      <option name="METHOD_NAME" value="testAddFirst" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyLinkedListTest.testDeleteFirst" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cwiczenia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DataStructures.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DataStructures" />
+      <option name="MAIN_CLASS_NAME" value="DataStructures.MyLinkedListTest" />
+      <option name="METHOD_NAME" value="testDeleteFirst" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyLinkedListTest.testDeleteLast" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cwiczenia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DataStructures.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DataStructures" />
+      <option name="MAIN_CLASS_NAME" value="DataStructures.MyLinkedListTest" />
+      <option name="METHOD_NAME" value="testDeleteLast" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyLinkedListTest.testGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cwiczenia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DataStructures.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DataStructures" />
+      <option name="MAIN_CLASS_NAME" value="DataStructures.MyLinkedListTest" />
+      <option name="METHOD_NAME" value="testGet" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -376,28 +424,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.Zadanie7" />
-      <item itemvalue="Application.Zadanie4" />
-      <item itemvalue="Application.SimpleException" />
-      <item itemvalue="Application.ConstructionExceptions" />
-      <item itemvalue="Application.ArraySorter" />
+      <item itemvalue="JUnit.MyLinkedListTest" />
+      <item itemvalue="JUnit.MyLinkedListTest.testAddFirst" />
+      <item itemvalue="JUnit.MyLinkedListTest.testGet" />
+      <item itemvalue="JUnit.MyLinkedListTest.testDeleteFirst" />
+      <item itemvalue="JUnit.MyLinkedListTest.testDeleteLast" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ArraySorter" />
-        <item itemvalue="Application.ConstructionExceptions" />
-        <item itemvalue="Application.SimpleException" />
-        <item itemvalue="Application.Zadanie4" />
-        <item itemvalue="Application.Zadanie7" />
+        <item itemvalue="JUnit.MyLinkedListTest" />
+        <item itemvalue="JUnit.MyLinkedListTest.testDeleteLast" />
+        <item itemvalue="JUnit.MyLinkedListTest.testDeleteFirst" />
+        <item itemvalue="JUnit.MyLinkedListTest.testAddFirst" />
+        <item itemvalue="JUnit.MyLinkedListTest.testGet" />
       </list>
     </recent_temporary>
   </component>
@@ -421,14 +461,46 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="MyLinkedListTest - 2019.02.23 at 14h 14m 48s.xml">
+      <configuration name="MyLinkedListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyLinkedListTest - 2019.02.23 at 14h 15m 07s.xml">
+      <configuration name="MyLinkedListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyLinkedListTest_testDeleteFirst - 2019.02.23 at 14h 17m 11s.xml">
+      <configuration name="MyLinkedListTest.testDeleteFirst" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyLinkedListTest_testDeleteLast - 2019.02.23 at 14h 18m 45s.xml">
+      <configuration name="MyLinkedListTest.testDeleteLast" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyLinkedListTest_testDeleteLast - 2019.02.23 at 14h 20m 01s.xml">
+      <configuration name="MyLinkedListTest.testDeleteLast" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyLinkedListTest - 2019.02.23 at 14h 20m 06s.xml">
+      <configuration name="MyLinkedListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyLinkedListTest - 2019.02.23 at 14h 20m 20s.xml">
+      <configuration name="MyLinkedListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyLinkedListTest - 2019.02.23 at 14h 21m 43s.xml">
+      <configuration name="MyLinkedListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyLinkedListTest - 2019.02.23 at 14h 22m 06s.xml">
+      <configuration name="MyLinkedListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyLinkedListTest - 2019.02.23 at 14h 22m 24s.xml">
+      <configuration name="MyLinkedListTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="32044000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1916" y="0" width="2568" height="1444" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13564041" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -438,7 +510,7 @@
       <window_info id="Nl-Palette" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32908705" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46066564" visible="true" weight="0.33116883" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46066564" visible="true" weight="0.33105543" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4969743" weight="0.39787397" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -458,8 +530,8 @@
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.3296875" />
-      <window_info anchor="right" id="Maven" order="11" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.3293556" />
+      <window_info anchor="right" id="Maven" order="11" weight="0.32975337" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,13 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///opt/jdk-10.0.1/lib/src.zip!/java.base/java/lang/RuntimeException.java" />
     <entry file="jar:///opt/jdk-10.0.1/lib/src.zip!/java.base/java/lang/IndexOutOfBoundsException.java" />
     <entry file="jrt:///opt/jdk-10.0.1!/java.base/java/lang/ArrayIndexOutOfBoundsException.class" />
@@ -696,7 +761,7 @@
     <entry file="jar:///opt/jdk-10.0.1/lib/src.zip!/java.base/java/util/concurrent/Callable.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/exception/SimpleException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
+        <state relative-caret-position="825">
           <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -706,15 +771,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exception/ConstructionExceptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
+        <state relative-caret-position="480">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        <state relative-caret-position="420">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="21" lean-forward="true" selection-start-line="18" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.4.0/junit-platform-commons-1.4.0.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="304" selection-start-line="304" selection-end-line="304" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/jdk-10.0.1/lib/src.zip!/java.base/jdk/internal/reflect/NativeMethodAccessorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DataStructures/MyLinkedListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="93" column="43" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DataStructures/MyLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+          <folding>
+            <element signature="e#1584#1585#0" expanded="true" />
+            <element signature="e#1611#1612#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
