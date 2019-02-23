@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36a653fc-6c82-455c-84b1-004358fc5a54" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_java5_17_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="36a653fc-6c82-455c-84b1-004358fc5a54" name="Default" comment="2nd method of sorting added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cwiczenia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Cwiczenia.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Homework/ArraySorter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Homework/ArraySorter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exception/SimpleException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/exception/SimpleException.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,18 +28,18 @@
     </SUITE>
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="240" />
+    <option name="myElementSize" value="270" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+            <state relative-caret-position="417">
+              <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
               <folding>
                 <element signature="method#sort#0;class#ArraySorter#0" />
               </folding>
@@ -53,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="122" column="27" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
+            <state relative-caret-position="315">
+              <caret line="162" column="9" lean-forward="true" selection-start-line="162" selection-start-column="9" selection-end-line="162" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,8 +110,8 @@
         <option value="$PROJECT_DIR$/src/main/java/exception/ConstructionExceptions.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/SimpleException.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java" />
       </list>
     </option>
   </component>
@@ -229,7 +223,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550960526376" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550961094798" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -262,7 +256,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ArraySorterTest">
+  <component name="RunManager" selected="JUnit.ArraySorterTest.testSort2For10MlnElements">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -339,20 +333,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArraySorter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Homework.ArraySorter" />
-      <module name="Cwiczenia" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Homework.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -370,6 +350,23 @@
       <option name="PACKAGE_NAME" value="Homework" />
       <option name="MAIN_CLASS_NAME" value="Homework.ArraySorterTest" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArraySorterTest.testSort2For10MlnElements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cwiczenia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Homework.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Homework" />
+      <option name="MAIN_CLASS_NAME" value="Homework.ArraySorterTest" />
+      <option name="METHOD_NAME" value="testSort2For10MlnElements" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -442,19 +439,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ArraySorter" />
       <item itemvalue="JUnit.ArraySorterTest" />
       <item itemvalue="JUnit.ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToFalse" />
       <item itemvalue="JUnit.ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToTrue" />
       <item itemvalue="JUnit.ArraySorterTest.testSort2NullArrayWithKolejnoscSetToTrue" />
+      <item itemvalue="JUnit.ArraySorterTest.testSort2For10MlnElements" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ArraySorterTest.testSort2For10MlnElements" />
         <item itemvalue="JUnit.ArraySorterTest" />
         <item itemvalue="JUnit.ArraySorterTest.testSort2NullArrayWithKolejnoscSetToTrue" />
         <item itemvalue="JUnit.ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToTrue" />
         <item itemvalue="JUnit.ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToFalse" />
-        <item itemvalue="Application.ArraySorter" />
       </list>
     </recent_temporary>
   </component>
@@ -476,27 +473,17 @@
       <workItem from="1532437640004" duration="6119000" />
       <workItem from="1532450495230" duration="2569000" />
     </task>
+    <task id="LOCAL-00001" summary="2nd method of sorting added">
+      <created>1550960580835</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1550960580835</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ArraySorterTest - 2019.02.16 at 11h 36m 44s.xml">
-      <configuration name="ArraySorterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArraySorterTest - 2019.02.16 at 11h 40m 21s.xml">
-      <configuration name="ArraySorterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArraySorterTest - 2019.02.16 at 12h 00m 10s.xml">
-      <configuration name="ArraySorterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArraySorterTest - 2019.02.16 at 12h 01m 16s.xml">
-      <configuration name="ArraySorterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArraySorterTest_testSort2RandomArrayWithKolejnoscSetToFalse - 2019.02.23 at 23h 14m 37s.xml">
-      <configuration name="ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToFalse" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArraySorterTest_testSort2RandomArrayWithKolejnoscSetToFalse - 2019.02.23 at 23h 16m 09s.xml">
-      <configuration name="ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToFalse" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ArraySorterTest - 2019.02.23 at 23h 16m 14s.xml">
       <configuration name="ArraySorterTest" configurationId="JUnit" />
     </history-entry>
@@ -508,6 +495,24 @@
     </history-entry>
     <history-entry file="ArraySorterTest_testSort2NullArrayWithKolejnoscSetToTrue - 2019.02.23 at 23h 17m 54s.xml">
       <configuration name="ArraySorterTest.testSort2NullArrayWithKolejnoscSetToTrue" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ArraySorterTest_testSort2NullArrayWithKolejnoscSetToTrue - 2019.02.23 at 23h 19m 13s.xml">
+      <configuration name="ArraySorterTest.testSort2NullArrayWithKolejnoscSetToTrue" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ArraySorterTest_testSort2NullArrayWithKolejnoscSetToTrue - 2019.02.23 at 23h 20m 08s.xml">
+      <configuration name="ArraySorterTest.testSort2NullArrayWithKolejnoscSetToTrue" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ArraySorterTest - 2019.02.23 at 23h 20m 21s.xml">
+      <configuration name="ArraySorterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ArraySorterTest - 2019.02.23 at 23h 20m 36s.xml">
+      <configuration name="ArraySorterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ArraySorterTest - 2019.02.23 at 23h 22m 08s.xml">
+      <configuration name="ArraySorterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ArraySorterTest_testSort2For10MlnElements - 2019.02.23 at 23h 26m 58s.xml">
+      <configuration name="ArraySorterTest.testSort2For10MlnElements" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -555,6 +560,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2nd method of sorting added" />
+    <option name="LAST_COMMIT_MESSAGE" value="2nd method of sorting added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -827,22 +836,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="122" column="27" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
+        <state relative-caret-position="417">
+          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#sort#0;class#ArraySorter#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        <state relative-caret-position="315">
+          <caret line="162" column="9" lean-forward="true" selection-start-line="162" selection-start-column="9" selection-end-line="162" selection-end-column="9" />
           <folding>
-            <element signature="method#sort#0;class#ArraySorter#0" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
