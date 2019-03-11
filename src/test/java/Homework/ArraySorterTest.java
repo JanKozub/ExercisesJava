@@ -159,10 +159,39 @@ class ArraySorterTest {
         }
         // when
         ArraySorter.sort2(array,true);
-
         // then
         for (int i = 0; i < array.length - 1; i++) {
             assertThat(array[i + 1]).isGreaterThanOrEqualTo(array[i]);
         }
+    }
+    @Test
+    void testSort3SortsAlreadySortedArray(){
+        // given
+        int[] array = {1,2,3,4,5,6,7,8,9};
+        // when
+        ArraySorter.sort3(array);
+        // then
+        for (int i = 0; i < array.length - 1; i++) {
+            assertThat(array[i]).isLessThan(array[i+1]);
+        }
+    }
+    @Test
+    void testSort3SortsRandomArray(){
+        // given
+        int[] array = {75,67,27,465,32,6746,74,26,45,7,3};
+        // when
+        ArraySorter.sort3(array);
+        // then
+        for (int i = 0; i < array.length - 1; i++) {
+            assertThat(array[i]).isLessThan(array[i+1]);
+        }
+    }
+    @Test
+    void testSort3SortsNullArray(){
+        // given
+        int[] array = null;
+        // when
+        ArraySorter.sort3(array);
+        // then
     }
 }

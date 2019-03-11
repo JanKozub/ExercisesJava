@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36a653fc-6c82-455c-84b1-004358fc5a54" name="Default" comment="Added test files">
+    <list default="true" id="36a653fc-6c82-455c-84b1-004358fc5a54" name="Default" comment="fixed sort2 method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Homework/ArraySorter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Homework/ArraySorter.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,7 +19,16 @@
     <SUITE FILE_PATH="coverage/Cwiczenia$ArraySorterTest_testSort2RandomArrayWithKolejnoscSetToTrue.ic" NAME="ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToTrue Coverage Results" MODIFIED="1550960190111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Homework.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Cwiczenia$ArraySorterTest.ic" NAME="ArraySorterTest Coverage Results" MODIFIED="1550960527384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Cwiczenia$ArraySorter.ic" NAME="ArraySorter Coverage Results" MODIFIED="1552339400227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Homework.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Cwiczenia$ArraySorterTest_testSort3SortsNullArray.ic" NAME="ArraySorterTest.testSort3SortsNullArray Coverage Results" MODIFIED="1552341336822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Homework.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Cwiczenia$ArraySorterTest_testSort3SortsRandomArray.ic" NAME="ArraySorterTest.testSort3SortsRandomArray Coverage Results" MODIFIED="1552341192417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Homework.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Cwiczenia$ArraySorterTest.ic" NAME="ArraySorterTest Coverage Results" MODIFIED="1552341212685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Homework.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Cwiczenia$Zadanie2.ic" NAME="Zadanie2 Coverage Results" MODIFIED="1532099637335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -28,18 +39,18 @@
     </SUITE>
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="270" />
+    <option name="myElementSize" value="345" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
+            <state relative-caret-position="595">
+              <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
               <folding>
                 <element signature="method#sort#0;class#ArraySorter#0" />
               </folding>
@@ -47,23 +58,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-850">
-              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+            <state relative-caret-position="247">
+              <caret line="114" column="5" lean-forward="true" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DataStructures/MyLinkedList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -119,8 +121,8 @@
         <option value="$PROJECT_DIR$/src/main/java/exception/ConstructionExceptions.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/SimpleException.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java" />
       </list>
     </option>
   </component>
@@ -232,7 +234,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552337260230" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552341336327" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -265,7 +267,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ArraySorterTest">
+  <component name="RunManager" selected="JUnit.ArraySorterTest.testSort3SortsNullArray">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -378,7 +380,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArraySorterTest.testSort2For10MlnElements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArraySorterTest.testSort3SortsAlreadySortedArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Cwiczenia" />
       <extension name="coverage">
         <pattern>
@@ -388,14 +390,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="Homework" />
       <option name="MAIN_CLASS_NAME" value="Homework.ArraySorterTest" />
-      <option name="METHOD_NAME" value="testSort2For10MlnElements" />
+      <option name="METHOD_NAME" value="testSort3SortsAlreadySortedArray" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArraySorterTest.testSort2NullArrayWithKolejnoscSetToTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArraySorterTest.testSort3SortsNullArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Cwiczenia" />
       <extension name="coverage">
         <pattern>
@@ -405,14 +407,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="Homework" />
       <option name="MAIN_CLASS_NAME" value="Homework.ArraySorterTest" />
-      <option name="METHOD_NAME" value="testSort2NullArrayWithKolejnoscSetToTrue" />
+      <option name="METHOD_NAME" value="testSort3SortsNullArray" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArraySorterTest.testSort3SortsRandomArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Cwiczenia" />
       <extension name="coverage">
         <pattern>
@@ -422,7 +424,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Homework" />
       <option name="MAIN_CLASS_NAME" value="Homework.ArraySorterTest" />
-      <option name="METHOD_NAME" value="testSort2RandomArrayWithKolejnoscSetToTrue" />
+      <option name="METHOD_NAME" value="testSort3SortsRandomArray" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -446,18 +448,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.ArraySorterTest" />
-      <item itemvalue="JUnit.ArraySorterTest.testSort2For10MlnElements" />
-      <item itemvalue="JUnit.ArraySorterTest.testSort2NullArrayWithKolejnoscSetToTrue" />
-      <item itemvalue="JUnit.ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToTrue" />
       <item itemvalue="Application.ArraySorter" />
+      <item itemvalue="JUnit.ArraySorterTest.testSort3SortsAlreadySortedArray" />
+      <item itemvalue="JUnit.ArraySorterTest.testSort3SortsRandomArray" />
+      <item itemvalue="JUnit.ArraySorterTest.testSort3SortsNullArray" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ArraySorterTest.testSort3SortsNullArray" />
         <item itemvalue="JUnit.ArraySorterTest" />
+        <item itemvalue="JUnit.ArraySorterTest.testSort3SortsRandomArray" />
+        <item itemvalue="JUnit.ArraySorterTest.testSort3SortsAlreadySortedArray" />
         <item itemvalue="Application.ArraySorter" />
-        <item itemvalue="JUnit.ArraySorterTest.testSort2For10MlnElements" />
-        <item itemvalue="JUnit.ArraySorterTest.testSort2NullArrayWithKolejnoscSetToTrue" />
-        <item itemvalue="JUnit.ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToTrue" />
       </list>
     </recent_temporary>
   </component>
@@ -507,39 +509,46 @@
       <option name="project" value="LOCAL" />
       <updated>1552335339613</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed sort2 method">
+      <created>1552337334856</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1552337334856</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ArraySorterTest_testSort2RandomArrayWithKolejnoscSetToTrue - 2019.02.23 at 23h 16m 31s.xml">
-      <configuration name="ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToTrue" configurationId="JUnit" />
+    <history-entry file="ArraySorterTest_testSort3SortsAlreadySortedArray - 2019.03.11 at 22h 52m 05s.xml">
+      <configuration name="ArraySorterTest.testSort3SortsAlreadySortedArray" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArraySorterTest_testSort2NullArrayWithKolejnoscSetToTrue - 2019.02.23 at 23h 17m 54s.xml">
-      <configuration name="ArraySorterTest.testSort2NullArrayWithKolejnoscSetToTrue" configurationId="JUnit" />
+    <history-entry file="ArraySorterTest_testSort3SortsAlreadySortedArray - 2019.03.11 at 22h 52m 42s.xml">
+      <configuration name="ArraySorterTest.testSort3SortsAlreadySortedArray" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArraySorterTest_testSort2NullArrayWithKolejnoscSetToTrue - 2019.02.23 at 23h 19m 13s.xml">
-      <configuration name="ArraySorterTest.testSort2NullArrayWithKolejnoscSetToTrue" configurationId="JUnit" />
+    <history-entry file="ArraySorterTest_testSort3SortsRandomArray - 2019.03.11 at 22h 52m 44s.xml">
+      <configuration name="ArraySorterTest.testSort3SortsRandomArray" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArraySorterTest_testSort2NullArrayWithKolejnoscSetToTrue - 2019.02.23 at 23h 20m 08s.xml">
-      <configuration name="ArraySorterTest.testSort2NullArrayWithKolejnoscSetToTrue" configurationId="JUnit" />
+    <history-entry file="ArraySorterTest_testSort3SortsRandomArray - 2019.03.11 at 22h 52m 54s.xml">
+      <configuration name="ArraySorterTest.testSort3SortsRandomArray" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArraySorterTest - 2019.02.23 at 23h 20m 21s.xml">
+    <history-entry file="ArraySorterTest_testSort3SortsRandomArray - 2019.03.11 at 22h 53m 13s.xml">
+      <configuration name="ArraySorterTest.testSort3SortsRandomArray" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ArraySorterTest - 2019.03.11 at 22h 53m 30s.xml">
       <configuration name="ArraySorterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArraySorterTest - 2019.02.23 at 23h 20m 36s.xml">
+    <history-entry file="ArraySorterTest - 2019.03.11 at 22h 53m 33s.xml">
       <configuration name="ArraySorterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArraySorterTest - 2019.02.23 at 23h 22m 08s.xml">
-      <configuration name="ArraySorterTest" configurationId="JUnit" />
+    <history-entry file="ArraySorterTest_testSort3SortsNullArray - 2019.03.11 at 22h 55m 02s.xml">
+      <configuration name="ArraySorterTest.testSort3SortsNullArray" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArraySorterTest_testSort2For10MlnElements - 2019.02.23 at 23h 26m 58s.xml">
-      <configuration name="ArraySorterTest.testSort2For10MlnElements" configurationId="JUnit" />
+    <history-entry file="ArraySorterTest_testSort3SortsNullArray - 2019.03.11 at 22h 55m 34s.xml">
+      <configuration name="ArraySorterTest.testSort3SortsNullArray" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArraySorterTest_testSort2For10MlnElements - 2019.02.23 at 23h 31m 25s.xml">
-      <configuration name="ArraySorterTest.testSort2For10MlnElements" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArraySorterTest_testSort2For10MlnElements - 2019.02.23 at 23h 31m 36s.xml">
-      <configuration name="ArraySorterTest.testSort2For10MlnElements" configurationId="JUnit" />
+    <history-entry file="ArraySorterTest_testSort3SortsNullArray - 2019.03.11 at 22h 55m 37s.xml">
+      <configuration name="ArraySorterTest.testSort3SortsNullArray" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -560,7 +569,7 @@
       <window_info id="DB Browser" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32908705" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46002132" visible="true" weight="0.33116883" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46002132" visible="true" weight="0.33116883" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4969743" weight="0.39718616" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -591,7 +600,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2nd method of sorting added" />
     <MESSAGE value="Added test files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added test files" />
+    <MESSAGE value="fixed sort2 method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed sort2 method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -871,22 +881,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-850">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        <state relative-caret-position="595">
+          <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#sort#0;class#ArraySorter#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
+        <state relative-caret-position="247">
+          <caret line="114" column="5" lean-forward="true" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
           <folding>
-            <element signature="method#sort#0;class#ArraySorter#0" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
