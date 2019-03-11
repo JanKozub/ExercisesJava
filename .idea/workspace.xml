@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36a653fc-6c82-455c-84b1-004358fc5a54" name="Default" comment="2nd method of sorting added">
+    <list default="true" id="36a653fc-6c82-455c-84b1-004358fc5a54" name="Default" comment="Added test files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+            <state relative-caret-position="366">
+              <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
               <folding>
                 <element signature="method#sort#0;class#ArraySorter#0" />
               </folding>
@@ -46,14 +47,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="-850">
+              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DataStructures/MyLinkedList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -109,8 +119,8 @@
         <option value="$PROJECT_DIR$/src/main/java/exception/ConstructionExceptions.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/SimpleException.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java" />
         <option value="$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java" />
       </list>
     </option>
   </component>
@@ -142,7 +152,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,12 +226,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550961195456" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552337260230" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -255,7 +265,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ArraySorterTest.testSort2For10MlnElements">
+  <component name="RunManager" selected="JUnit.ArraySorterTest">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -332,6 +342,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ArraySorter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Homework.ArraySorter" />
+      <module name="Cwiczenia" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Homework.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -388,23 +412,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToFalse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Cwiczenia" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Homework.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Homework" />
-      <option name="MAIN_CLASS_NAME" value="Homework.ArraySorterTest" />
-      <option name="METHOD_NAME" value="testSort2RandomArrayWithKolejnoscSetToFalse" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Cwiczenia" />
       <extension name="coverage">
@@ -441,16 +448,16 @@
       <item itemvalue="JUnit.ArraySorterTest" />
       <item itemvalue="JUnit.ArraySorterTest.testSort2For10MlnElements" />
       <item itemvalue="JUnit.ArraySorterTest.testSort2NullArrayWithKolejnoscSetToTrue" />
-      <item itemvalue="JUnit.ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToFalse" />
       <item itemvalue="JUnit.ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToTrue" />
+      <item itemvalue="Application.ArraySorter" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ArraySorterTest.testSort2For10MlnElements" />
         <item itemvalue="JUnit.ArraySorterTest" />
+        <item itemvalue="Application.ArraySorter" />
+        <item itemvalue="JUnit.ArraySorterTest.testSort2For10MlnElements" />
         <item itemvalue="JUnit.ArraySorterTest.testSort2NullArrayWithKolejnoscSetToTrue" />
         <item itemvalue="JUnit.ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToTrue" />
-        <item itemvalue="JUnit.ArraySorterTest.testSort2RandomArrayWithKolejnoscSetToFalse" />
       </list>
     </recent_temporary>
   </component>
@@ -493,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550961193242</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added test files">
+      <created>1552335339612</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1552335339613</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -535,7 +549,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18550107" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18763326" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -546,7 +560,7 @@
       <window_info id="DB Browser" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32908705" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46002132" weight="0.33116883" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46002132" visible="true" weight="0.33116883" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4969743" weight="0.39718616" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -576,7 +590,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2nd method of sorting added" />
-    <option name="LAST_COMMIT_MESSAGE" value="2nd method of sorting added" />
+    <MESSAGE value="Added test files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added test files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -849,22 +864,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/DataStructures/MyLinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-          <folding>
-            <element signature="method#sort#0;class#ArraySorter#0" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Homework/ArraySorterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="-850">
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Homework/ArraySorter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
+          <folding>
+            <element signature="method#sort#0;class#ArraySorter#0" />
           </folding>
         </state>
       </provider>
