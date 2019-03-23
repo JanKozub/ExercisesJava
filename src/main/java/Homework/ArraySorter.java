@@ -18,14 +18,8 @@ public class ArraySorter {
         }
     }
 
-<<<<<<< HEAD
     public static int[] sort2(int[] array, boolean kolejnosc) {
         if (array == null) return array;
-=======
-    public static void sort2(int[] array, boolean kolejnosc) {
-        if (array == null) return;
-
->>>>>>> eac9941... recurrence exercises
         int[] newArray = new int[array.length];
         int smallestValue = array[0];
         int smallestIndex = 0;
