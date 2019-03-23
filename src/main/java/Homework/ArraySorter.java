@@ -18,22 +18,31 @@ public class ArraySorter {
         }
     }
 
+<<<<<<< HEAD
     public static int[] sort2(int[] array, boolean kolejnosc) {
         if (array == null) return array;
+=======
+    public static void sort2(int[] array, boolean kolejnosc) {
+        if (array == null) return;
+
+>>>>>>> eac9941... recurrence exercises
         int[] newArray = new int[array.length];
-        int val = array[0];
-        int num = 0;
+        int smallestValue = array[0];
+        int smallestIndex = 0;
+
         for (int i = 0; i < array.length; i++) {
             for (int g = 0; g < array.length; g++) {
-                if (val < array[g]) {
-                    val = array[g];
-                    num = g;
+                if (smallestValue < array[g]) {
+                    smallestValue = array[g];
+                    smallestIndex = g;
                 }
             }
-            array[num] = 0;
-            newArray[i] = val;
-            val = 0;
+
+            array[smallestIndex] = 0;
+            newArray[i] = smallestValue;
+            smallestValue = 0;
         }
+
         if (kolejnosc) {
             int size = newArray.length;
             int[] array2 = new int[size];
