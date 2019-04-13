@@ -50,7 +50,7 @@ public class ArraySorter {
     }
 
     public static int[] sort3(int[] array) {
-        if (array == null)return array;
+        if (array == null) return array;
         int num = 0;
         int val = array[0];
         int lastVal;
@@ -64,8 +64,8 @@ public class ArraySorter {
             lastVal = array[i];
             array[i] = val;
             array[num] = lastVal;
-            val = array[array.length-1];
-            num = array.length-1;
+            val = array[array.length - 1];
+            num = array.length - 1;
         }
         return array;
     }

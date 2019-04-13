@@ -1,7 +1,5 @@
 package DataStructures;
 
-import java.util.List;
-
 public class MyLinkedList<T> {
     private Node<T> tail;
     private int size;
