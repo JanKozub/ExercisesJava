@@ -1,4 +1,4 @@
-package BinarySearch;
+package binarysearch;
 
 import org.junit.jupiter.api.Test;
 
@@ -46,7 +46,17 @@ class BinarySearchTest {
         //WHEN
         int index = binarySearch.findValueArray(array, 8);
         //THEN
-        assertThat(index).isEqualTo(-4);
+        assertThat(index).isEqualTo(-5);
+    }
+
+    @Test
+    void findPlaceOfValueInArrayAtTheBeginningOfAnArray() {
+        //GIVEN
+        int[] array = {1, 2, 6, 7, 9, 10};
+        //WHEN
+        int index = binarySearch.findValueArray(array, 0);
+        //THEN
+        assertThat(index).isEqualTo(-1);
     }
 
 
