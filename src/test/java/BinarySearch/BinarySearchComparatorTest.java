@@ -4,37 +4,39 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+public class BinarySearchComparatorTest {
 
-class BinarySearchTest {
+    BinarySearchComparator binarySearchComparator = new BinarySearchComparator();
 
-    BinarySearch binarySearch = new BinarySearch();
     @Test
     void findValueInOneElementArray() {
         //GIVEN
         int[] array = {1};
         //WHEN
-        int index = binarySearch.findValueArray(array,1);
+        int index = binarySearchComparator.findValueArrayComparator(array, 1);
         //THEN
         assertThat(index).isEqualTo(0);
     }
+
     @Test
-    void findValueInSmallArray(){
+    void findValueInSmallArray() {
         //GIVEN
-        int[] array = {1,2,6,7,8,9,10};
+        int[] array = {1, 2, 6, 7, 8, 9, 10};
         //WHEN
-        int index = binarySearch.findValueArray(array,6);
+        int index = binarySearchComparator.findValueArrayComparator(array, 6);
         //THEN
         assertThat(index).isEqualTo(2);
     }
+
     @Test
-    void findValueInLargeArray(){
+    void findValueInLargeArray() {
         //GIVEN
         int[] array = new int[1000];
-        for (int i = 0; i < 1000; i++){
+        for (int i = 0; i < 1000; i++) {
             array[i] = i;
         }
         //WHEN
-        int index = binarySearch.findValueArray(array,600);
+        int index = binarySearchComparator.findValueArrayComparator(array, 600);
         //THEN
         assertThat(index).isEqualTo(600);
     }
@@ -44,8 +46,9 @@ class BinarySearchTest {
         //GIVEN
         int[] array = {1, 2, 6, 7, 9, 10};
         //WHEN
-        int index = binarySearch.findValueArray(array, 8);
+        int index = binarySearchComparator.findValueArrayComparator(array, 8);
         //THEN
         assertThat(index).isEqualTo(-4);
     }
+
 }
