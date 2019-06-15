@@ -9,6 +9,8 @@ public class Zadanie4 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        test(scanner);
+
         System.out.println("Wpisz slowo");
         String odczyt = scanner.nextLine();
         System.out.println("Oto informacje na temat twojego slowa");
@@ -17,5 +19,9 @@ public class Zadanie4 {
         if (Zadanie9.sprawdzCzyWyrazJestPalinondromem(odczyt) == true) System.out.println("tak");else System.out.println("nie");
         System.out.println("Otwrocona wartosc:");
         Zadanie7.odwrocSlowo(odczyt);
+    }
+
+    public static void test(Scanner scanner) {
+        scanner.hasNext();
     }
 }

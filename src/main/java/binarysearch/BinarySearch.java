@@ -1,4 +1,4 @@
-package BinarySearch;
+package binarysearch;
 
 public class BinarySearch {
     public static void main(String[] args) {
@@ -23,7 +23,9 @@ public class BinarySearch {
                 right = mid;
             }
         }
-        if (index == -1) index = 0 - mid;
+        if (index == -1) {
+            index = -mid - 1;
+        }
         return index;
     }
 }
