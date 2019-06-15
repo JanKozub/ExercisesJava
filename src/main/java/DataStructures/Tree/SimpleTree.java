@@ -1,4 +1,6 @@
-package tree;
+package DataStructures.Tree;
+
+import java.io.PrintStream;
 
 public class SimpleTree<T extends Comparable<T>> {
 
@@ -23,6 +25,18 @@ public class SimpleTree<T extends Comparable<T>> {
         }
     }
 
+    public int depth() {
+        return depth(root);
+    }
+
+    public boolean contains(T value) {
+        return contains(root, value) != null;
+    }
+
+	public void print(PrintStream out) {
+	}
+
+
     private void add(Node root, T value) {
         int order = value.compareTo(root.value); // <0, ==0, >0
         if (order < 0) {
@@ -40,10 +54,6 @@ public class SimpleTree<T extends Comparable<T>> {
         }
     }
 
-    public int depth() {
-        return depth(root);
-    }
-
     private int depth(Node root) {
         if (root == null) {
             return 0;
@@ -54,10 +64,6 @@ public class SimpleTree<T extends Comparable<T>> {
         int maxDepth = Math.max(lDepth, rDepth);
 
         return 1 + maxDepth;
-    }
-
-    public boolean contains(T value) {
-        return contains(root, value) != null;
     }
 
     private Node contains(Node root, T value) {
@@ -86,4 +92,23 @@ public class SimpleTree<T extends Comparable<T>> {
         }
 
     }
+
+
+
+    public static void main(String[] args) {
+		SimpleTree<Integer> tree = new SimpleTree<>();
+
+		tree.add(5);
+		tree.add(3);
+		tree.add(2);
+		tree.add(1);
+		tree.add(4);
+
+		tree.add(7);
+		tree.add(8);
+		tree.add(9);
+
+		tree.print(System.out);
+	}
+
 }
