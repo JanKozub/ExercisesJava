@@ -1,8 +1,15 @@
 package DataStructures.Tree;
 
 import java.io.PrintStream;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
 
 public class SimpleTree<T extends Comparable<T>> {
+    public interface Visitor<T> {
+        void visit(T value);
+    }
+
 
     private Node root;
 
@@ -33,7 +40,23 @@ public class SimpleTree<T extends Comparable<T>> {
         return contains(root, value) != null;
     }
 
-	public void print(PrintStream out) {
+
+    private void print(PrintStream out) {
+        print(out, root, 0, "-");
+    }
+
+
+    private void print(PrintStream out, Node root, int depth, String prefix) {
+        out.println(prefix + root);
+
+        prefix += "-";
+        depth += 1;
+        if (root.left != null) {
+            print(out, root.left, depth, prefix);
+        }
+        if (root.right != null) {
+            print(out, root.right, depth, prefix);
+        }
 	}
 
 
@@ -80,6 +103,57 @@ public class SimpleTree<T extends Comparable<T>> {
         }
     }
 
+    public boolean contains2(T value){
+        LinkedList<Node> list = new LinkedList<>();
+        list.add(root);
+
+        while (!list.isEmpty()){
+            Node pos = list.removeFirst();
+            if (value.compareTo(pos.value) == 0) {
+                return true;
+            }
+            if (pos.left != null){
+                list.add(pos.left);
+            }
+            if (pos.right != null){
+                list.add(pos.right);
+            }
+        }
+        return false;
+    }
+
+    public void visitBF(Visitor<T> visitor){
+        LinkedList<Node> list = new LinkedList<>();
+        list.add(root);
+
+        while (!list.isEmpty()){
+            Node pos = list.removeFirst();
+            visitor.visit(pos.value);
+            if (pos.left != null){
+                list.add(pos.left);
+            }
+            if (pos.right != null){
+                list.add(pos.right);
+            }
+        }
+    }
+    public void visitDF(Visitor<T> visitor){
+
+        visitDF(root, visitor);
+    }
+
+    private void visitDF(Node root, Visitor<T> visitor){
+        if (root == null) return;
+
+        visitor.visit(root.value);
+        visitDF(root.left, visitor);
+        visitDF(root.right, visitor);
+    }
+
+    private void remove(){
+
+    }
+
     private class Node {
         final T value;
         Node left;
@@ -89,6 +163,11 @@ public class SimpleTree<T extends Comparable<T>> {
             this.value = value;
             this.left = null;
             this.right = null;
+        }
+
+        @Override
+        public String toString(){
+            return Objects.toString(value);
         }
 
     }
@@ -108,6 +187,7 @@ public class SimpleTree<T extends Comparable<T>> {
 		tree.add(8);
 		tree.add(9);
 
-		tree.print(System.out);
+		//tree.print(System.out);
+        tree.visitDF(v -> System.out.println(v));
 	}
 }
