@@ -2,6 +2,8 @@ package BinarySearch;
 
 import org.junit.jupiter.api.Test;
 
+import BinarySearch.BinarySearchComparator;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BinarySearchComparatorTest {

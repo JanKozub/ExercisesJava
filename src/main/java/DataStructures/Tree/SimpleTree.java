@@ -110,5 +110,4 @@ public class SimpleTree<T extends Comparable<T>> {
 
 		tree.print(System.out);
 	}
-
 }

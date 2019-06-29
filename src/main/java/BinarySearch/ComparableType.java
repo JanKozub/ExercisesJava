@@ -1,4 +1,4 @@
-package binarysearch;
+package BinarySearch;
 
 import org.jetbrains.annotations.NotNull;
 

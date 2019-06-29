@@ -1,6 +1,8 @@
-package binarysearch;
+package BinarySearch;
 
 import org.junit.jupiter.api.Test;
+
+import BinarySearch.BinarySearch;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
