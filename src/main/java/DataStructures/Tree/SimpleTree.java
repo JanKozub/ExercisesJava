@@ -2,7 +2,6 @@ package DataStructures.Tree;
 
 import java.io.PrintStream;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Objects;
 
 public class SimpleTree<T extends Comparable<T>> {
@@ -26,7 +25,7 @@ public class SimpleTree<T extends Comparable<T>> {
         }
 
         if (isEmpty()) {
-            root = new Node(value);
+            root = new Node(null, value);
         } else {
             add(root, value);
         }
@@ -57,20 +56,20 @@ public class SimpleTree<T extends Comparable<T>> {
         if (root.right != null) {
             print(out, root.right, depth, prefix);
         }
-	}
+    }
 
 
     private void add(Node root, T value) {
         int order = value.compareTo(root.value); // <0, ==0, >0
         if (order < 0) {
             if (root.left == null) {
-                root.left = new Node(value);
+                root.left = new Node(root, value);
             } else {
                 add(root.left, value);
             }
         } else if (order > 0) {
             if (root.right == null) {
-                root.right = new Node(value);
+                root.right = new Node(root, value);
             } else {
                 add(root.right, value);
             }
@@ -103,46 +102,47 @@ public class SimpleTree<T extends Comparable<T>> {
         }
     }
 
-    public boolean contains2(T value){
+    public boolean contains2(T value) {
         LinkedList<Node> list = new LinkedList<>();
         list.add(root);
 
-        while (!list.isEmpty()){
+        while (!list.isEmpty()) {
             Node pos = list.removeFirst();
             if (value.compareTo(pos.value) == 0) {
                 return true;
             }
-            if (pos.left != null){
+            if (pos.left != null) {
                 list.add(pos.left);
             }
-            if (pos.right != null){
+            if (pos.right != null) {
                 list.add(pos.right);
             }
         }
         return false;
     }
 
-    public void visitBF(Visitor<T> visitor){
+    public void visitBF(Visitor<T> visitor) {
         LinkedList<Node> list = new LinkedList<>();
         list.add(root);
 
-        while (!list.isEmpty()){
+        while (!list.isEmpty()) {
             Node pos = list.removeFirst();
             visitor.visit(pos.value);
-            if (pos.left != null){
+            if (pos.left != null) {
                 list.add(pos.left);
             }
-            if (pos.right != null){
+            if (pos.right != null) {
                 list.add(pos.right);
             }
         }
     }
-    public void visitDF(Visitor<T> visitor){
+
+    public void visitDF(Visitor<T> visitor) {
 
         visitDF(root, visitor);
     }
 
-    private void visitDF(Node root, Visitor<T> visitor){
+    private void visitDF(Node root, Visitor<T> visitor) {
         if (root == null) return;
 
         visitor.visit(root.value);
@@ -150,44 +150,73 @@ public class SimpleTree<T extends Comparable<T>> {
         visitDF(root.right, visitor);
     }
 
-    private void remove(){
 
+    private Node minimum(Node root) {
+        if (root.left != null) {
+            return minimum(root.left);
+        } else {
+            return root;
+        }
+    }
+
+    private void transplant(Node root, Node replacement) {
+        if (root.parent == null) {
+            this.root = replacement;
+        } else if (root == root.parent.left) {
+            root.parent.left = replacement;
+        } else {
+            root.parent.right = replacement;
+        }
+        replacement.parent = root.parent;
+    }
+
+    private void remove(Node root) {
+        if (root.left == null){
+            transplant(root, root.right);
+        }else if (root.right == null){
+            transplant(root, root.left);
+        }else{
+            Node minimum = minimum(root.right);
+            root.left.parent = minimum;
+            minimum.left = root.left;
+        }
     }
 
     private class Node {
         final T value;
         Node left;
         Node right;
+        Node parent;
 
-        public Node(T value) {
+        public Node(Node parent, T value) {
             this.value = value;
             this.left = null;
             this.right = null;
+            this.parent = parent;
         }
 
         @Override
-        public String toString(){
+        public String toString() {
             return Objects.toString(value);
         }
 
     }
 
 
-
     public static void main(String[] args) {
-		SimpleTree<Integer> tree = new SimpleTree<>();
+        SimpleTree<Integer> tree = new SimpleTree<>();
 
-		tree.add(5);
-		tree.add(3);
-		tree.add(2);
-		tree.add(1);
-		tree.add(4);
+        tree.add(5);
+        tree.add(3);
+        tree.add(2);
+        tree.add(1);
+        tree.add(4);
 
-		tree.add(7);
-		tree.add(8);
-		tree.add(9);
+        tree.add(7);
+        tree.add(8);
+        tree.add(9);
 
-		//tree.print(System.out);
+        //tree.print(System.out);
         tree.visitDF(v -> System.out.println(v));
-	}
+    }
 }
