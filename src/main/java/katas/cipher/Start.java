@@ -4,6 +4,8 @@ public class Start {
     public static void main(String[] args) {
         AlphabetCipher alphabetCipher = new AlphabetCipher(AlphabetCipher.ASCII_FULL, "scones");
 
-        System.out.println(alphabetCipher.encode("meetmebythethree"));
+        String encodedMsg = alphabetCipher.encode("SAGstnbFSAghYDJDGF63gadvYUT");
+        System.out.println(encodedMsg);
+        System.out.println(alphabetCipher.decode(encodedMsg));
     }
 }

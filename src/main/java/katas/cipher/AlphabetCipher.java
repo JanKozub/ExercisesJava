@@ -22,7 +22,17 @@ public class AlphabetCipher implements Cipher {
 
     @Override
     public String decode(String message) {
-        return "";
+        StringBuilder result = new StringBuilder(message.length());
+        for (int i = 0; i < message.length(); i++) {
+            int x = getIndexOf(password.charAt(i % password.length()));
+            int y = getIndexOf(message.charAt(i));
+            int shift = x - y;
+            if (shift < 0)
+                result.append(alphabet[shift * -1]);
+            else
+                result.append(alphabet[alphabet.length - shift]);
+        }
+        return result.toString();
     }
 
     @Override
