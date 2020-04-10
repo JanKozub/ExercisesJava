@@ -25,29 +25,55 @@ Remember that there can't be more than 3 identical symbols in a row.
 More about roman numerals - http://en.wikipedia.org/wiki/Roman_numerals
  */
 
-import java.util.ArrayList;
-
 public class Conversion {
 
+    private static String[] tens = {"I", "X", "C", "M"};
+    private static String[] halfs = {"V", "L", "D"};
+
     public static void main(String[] args) {
-        System.out.println(solution(1256));
+        System.out.println(solution(1337));
     }
 
     public static String solution(int n) {
-        ArrayList<Integer> array = new ArrayList<>();
+        StringBuilder output = new StringBuilder();
+
+        int i = 0;
         do {
-            array.add(n % 10);
+            int num = n % 10;
+            output.insert(0, convertDigit(num, i));
             n /= 10;
+            i++;
         } while (n > 0);
 
-        for (int i = array.size() - 1; i >= 0; i--) {
-            if (array.get(i) < 4) {
-                for (int j = 0; j < array.get(i); j++) {
+        return output.toString();
+    }
 
+    private static String convertDigit(int n, int idx) {
+        StringBuilder string = new StringBuilder();
+
+        if (idx >= 4)
+            string.append(tens[idx]);
+        else {
+            if (n == 4 || n == 9)
+                string.append(tens[idx]);
+
+            if (n >= 9)
+                string.append(tens[idx + 1]);
+
+            if (n <= 3) {
+                for (int i = 0; i < n; i++) {
+                    string.append(tens[idx]);
+                }
+            }
+
+            if (n >= 4 && n <= 8) {
+                string.append(halfs[idx]);
+                for (int i = 0; i < n - 5; i++) {
+                    string.append(tens[idx]);
                 }
             }
         }
 
-        return array.toString();
+        return string.toString();
     }
 }
