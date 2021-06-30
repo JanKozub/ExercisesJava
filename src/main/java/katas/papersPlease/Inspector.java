@@ -11,6 +11,9 @@ public class Inspector {
     private Map<String, String> requiredDocuments;
     private Map<String, String> person;
     private ArrayList<Document> documents;
+    private Document diplomaticAuthorization;
+    private Document passport;
+    private Document grantOfAsylum;
 
     public void receiveBulletin(String bulletin) {
         this.wantedCriminals = new ArrayList<>();
@@ -31,27 +34,27 @@ public class Inspector {
         System.out.println("Person:");
         System.out.println(person);
 
-        Document passport = getDocumentIfExists("passport");
+        this.passport = getDocumentIfExists("passport");
 //        Document certificateOfVaccine = getDocumentIfExists("certificate_of_vaccination");
 //        Document idCard = getDocumentIfExists("ID_card");
         Document accessPermit = getDocumentIfExists("access_permit");
 //        Document workPass = getDocumentIfExists("work_pass");
-        Document grantOfAsylum = getDocumentIfExists("grant_of_asylum");
-//        Document diplomaticAuthorization = getDocumentIfExists("diplomatic_authorization");
+        this.grantOfAsylum = getDocumentIfExists("grant_of_asylum");
+        this.diplomaticAuthorization = getDocumentIfExists("diplomatic_authorization");
 
-        for (Map.Entry<String, String> e : requiredDocuments.entrySet()) {
-            if (documents.stream().noneMatch(document -> document.getDocumentName().equals(e.getValue()))) {
-                assert passport != null;
-                String nation = passport.getNation().equals("Arstotzka") ? "Entrants" : "Foreigners";
-                if (e.getKey().equals(nation))
-                    return "Entry denied: missing required " + e.getValue() + ".";
-            }
-        }
-
-        if (passport != null) {
+        if (passport != null)
             if (checkIsWantedCriminal(passport.getName()))
                 return "Detainment: Entrant is a wanted criminal.";
 
+        String document = anyDocumentExpired();
+        if (document != null) return document;
+
+        String documentMissing = isDocumentMissing(passport);
+        if (documentMissing != null) return documentMissing;
+
+        if (doesNamesMismatch()) return "Detainment: name mismatch";
+
+        if (passport != null) {
             if (accessPermit != null) {
                 if (accessPermit.fieldsDontMatch(passport, "ID#"))
                     return "Detainment: ID number mismatch.";
@@ -62,13 +65,9 @@ public class Inspector {
             if (!passport.getNation().equals("Arstotzka"))
                 if (checkForBannedNation(passport.getNation()) || isNotAllowedNation(passport.getNation()))
                     return "Entry denied: citizen of banned nation.";
-
         }
 
         if (grantOfAsylum != null && passport != null) {
-            if (checkIsWantedCriminal(passport.getName()))
-                return "Detainment: Entrant is a wanted criminal.";
-
             if (grantOfAsylum.fieldsDontMatch(passport, "ID#"))
                 return "Detainment: ID number mismatch.";
 
@@ -76,14 +75,15 @@ public class Inspector {
                 return "Entry denied: citizen of banned nation.";
         }
 
-        for (Document document : documents) {
-            if (document.hasDocumentExpired())
-                return "Entry denied: " + document.getDocumentName() + " expired.";
-        }
-
         if (passport != null && !passport.getNation().equals("Arstotzka"))
             return "Cause no trouble.";
         return "Glory to Arstotzka.";
+    }
+
+    private boolean doesNamesMismatch() {
+        String name = documents.get(0).getName();
+        System.out.println(name);
+        return !documents.stream().findAny().get().getName().equals(name);
     }
 
     private Document getDocumentIfExists(String documentName) {
@@ -93,6 +93,39 @@ public class Inspector {
             return document;
         } else
             return null;
+    }
+
+    private String isDocumentMissing(Document doc) {
+        for (Map.Entry<String, String> e : requiredDocuments.entrySet()) {
+            if (documents.stream().noneMatch(document -> document.getDocumentName().equals(e.getValue()))) {
+                if (doc != null) {
+                    String nation = doc.getNation().equals("Arstotzka") ? "Entrants" : "Foreigners";
+                    if (e.getKey().equals("Foreigners") && passport == null)
+                        return "Entry denied: missing required passport.";
+                    if (e.getKey().equals(nation)) {
+                        if (e.getValue().equals("access permit") && diplomaticAuthorization != null) {
+                            if (!isDiplomaticAuthorizationValid(diplomaticAuthorization)) {
+                                return "Entry denied: invalid diplomatic authorization.";
+                            }
+                        } else if (e.getValue().equals("access permit") && grantOfAsylum == null)
+                            return "Entry denied: missing required " + e.getValue() + ".";
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    private boolean isDiplomaticAuthorizationValid(Document document) {
+        return Arrays.asList(document.getData().get("ACCESS").split(", ")).contains("Arstotzka");
+    }
+
+    private String anyDocumentExpired() {
+        for (Document document : documents) {
+            if (document.hasDocumentExpired())
+                return "Entry denied: " + document.getDocumentName() + " expired.";
+        }
+        return null;
     }
 
     private boolean checkForBannedNation(String nation) {
@@ -175,7 +208,10 @@ public class Inspector {
 
         public boolean hasDocumentExpired() {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");
-            LocalDate time = LocalDate.parse(getExpDate(), formatter);
+            String date = getExpDate();
+            if (date == null)
+                date = "1982.11.25";
+            LocalDate time = LocalDate.parse(date, formatter);
             return time.isBefore(LocalDate.parse("1982-11-22"));
         }
 
