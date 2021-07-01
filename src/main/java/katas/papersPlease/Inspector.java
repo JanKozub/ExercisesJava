@@ -5,19 +5,20 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Inspector {
-    private String[] allowedCitizens;
+    private ArrayList<String> allowedCitizens;
     private String[] deniedCitizens;
     private List<String> wantedCriminals;
     private Map<String, String> requiredDocuments;
     private Map<String, String> person;
     private ArrayList<Document> documents;
-    private Document diplomaticAuthorization;
     private Document passport;
     private Document grantOfAsylum;
+    private Document diplomaticAuthorization;
 
     public void receiveBulletin(String bulletin) {
         this.wantedCriminals = new ArrayList<>();
         this.requiredDocuments = new HashMap<>();
+        this.allowedCitizens = new ArrayList<>();
         String[] infos = bulletin.split("\n");
 
         for (String info : infos) {
@@ -31,93 +32,91 @@ public class Inspector {
     public String inspect(Map<String, String> person) {
         this.person = person;
         this.documents = new ArrayList<>();
+        System.out.println(" ");
         System.out.println("Person:");
         System.out.println(person);
 
-        this.passport = getDocumentIfExists("passport");
-//        Document certificateOfVaccine = getDocumentIfExists("certificate_of_vaccination");
-//        Document idCard = getDocumentIfExists("ID_card");
-        Document accessPermit = getDocumentIfExists("access_permit");
-//        Document workPass = getDocumentIfExists("work_pass");
-        this.grantOfAsylum = getDocumentIfExists("grant_of_asylum");
-        this.diplomaticAuthorization = getDocumentIfExists("diplomatic_authorization");
+        for (Map.Entry<String, String> entry : person.entrySet()) {
+            Document document = new Document(entry.getKey().replaceAll("_", " "), entry.getValue());
+            switch (document.getDocumentName()) {
+                case "passport":
+                    passport = document;
+                    break;
+                case "grant of asylum":
+                    grantOfAsylum = document;
+                    break;
+                case "diplomatic authorization":
+                    diplomaticAuthorization = document;
+                    break;
+            }
+            documents.add(new Document(entry.getKey(), entry.getValue()));
+        }
 
-        if (passport != null)
-            if (checkIsWantedCriminal(passport.getName()))
-                return "Detainment: Entrant is a wanted criminal.";
+        String y = checkIsWantedCriminal();
+        if (y != null) return y;
+
+        String x = checkForMismatch();
+        if (x != null) return x;
 
         String document = anyDocumentExpired();
         if (document != null) return document;
 
-        String documentMissing = isDocumentMissing(passport);
+        String documentMissing = isDocumentMissing();
         if (documentMissing != null) return documentMissing;
 
-        if (doesNamesMismatch()) return "Detainment: name mismatch";
+        if (checkForBannedNation(getNation()))
+            return "Entry denied: citizen of banned nation.";
 
-        if (passport != null) {
-            if (accessPermit != null) {
-                if (accessPermit.fieldsDontMatch(passport, "ID#"))
-                    return "Detainment: ID number mismatch.";
-                if (accessPermit.fieldsDontMatch(passport, "NATION"))
-                    return "Detainment: nationality mismatch.";
-            }
+        if (!isAllowedNation(getNation()))
+            return "Entry denied: citizen of banned nation.";
 
-            if (!passport.getNation().equals("Arstotzka"))
-                if (checkForBannedNation(passport.getNation()) || isNotAllowedNation(passport.getNation()))
-                    return "Entry denied: citizen of banned nation.";
-        }
-
-        if (grantOfAsylum != null && passport != null) {
-            if (grantOfAsylum.fieldsDontMatch(passport, "ID#"))
-                return "Detainment: ID number mismatch.";
-
-            if (checkForBannedNation(passport.getNation()) || isNotAllowedNation(passport.getNation()))
-                return "Entry denied: citizen of banned nation.";
-        }
-
-        if (passport != null && !passport.getNation().equals("Arstotzka"))
+        if (!getEntrant().equals("Entrants"))
             return "Cause no trouble.";
         return "Glory to Arstotzka.";
     }
 
-    private boolean doesNamesMismatch() {
-        String name = documents.get(0).getName();
-        System.out.println(name);
-        return !documents.stream().findAny().get().getName().equals(name);
+    private String checkForMismatch() {
+        if (!documents.stream().allMatch(d -> {
+            if (d.getId() != null) return d.getId().equals(documents.get(0).getId());
+            else return true;
+        })) return "Detainment: ID number mismatch.";
+
+        if (!documents.stream().allMatch(d -> d.getName().equals(documents.get(0).getName())))
+            return "Detainment: name mismatch.";
+
+        if (!documents.stream().allMatch(d -> d.getNation().equals(documents.get(0).getNation())))
+            return "Detainment: nationality mismatch.";
+        return null;
     }
 
-    private Document getDocumentIfExists(String documentName) {
-        if (person.containsKey(documentName)) {
-            Document document = new Document(documentName.replaceAll("_", " "), person.get(documentName));
-            documents.add(document);
-            return document;
-        } else
-            return null;
-    }
-
-    private String isDocumentMissing(Document doc) {
-        for (Map.Entry<String, String> e : requiredDocuments.entrySet()) {
-            if (documents.stream().noneMatch(document -> document.getDocumentName().equals(e.getValue()))) {
-                if (doc != null) {
-                    String nation = doc.getNation().equals("Arstotzka") ? "Entrants" : "Foreigners";
-                    if (e.getKey().equals("Foreigners") && passport == null)
-                        return "Entry denied: missing required passport.";
-                    if (e.getKey().equals(nation)) {
-                        if (e.getValue().equals("access permit") && diplomaticAuthorization != null) {
-                            if (!isDiplomaticAuthorizationValid(diplomaticAuthorization)) {
-                                return "Entry denied: invalid diplomatic authorization.";
-                            }
-                        } else if (e.getValue().equals("access permit") && grantOfAsylum == null)
-                            return "Entry denied: missing required " + e.getValue() + ".";
+    private String isDocumentMissing() {
+        if (getEntrant().equals("Foreigners") && passport == null)
+            return "Entry denied: missing required passport.";
+        for (Map.Entry<String, String> entry : requiredDocuments.entrySet()) {
+            System.out.println(entry.getValue());
+            if (documents.stream().noneMatch(doc -> doc.getDocumentName().equals(entry.getValue())))
+                if (getEntrant().equals(entry.getKey())) {
+                    if (entry.getValue().equals("access permit")
+                            && diplomaticAuthorization != null
+                            && !isDiplomaticAuthorizationValid()) {
+                        return "Entry denied: invalid diplomatic authorization.";
                     }
+                    return "Entry denied: missing required " + entry.getValue() + ".";
                 }
-            }
         }
         return null;
     }
 
-    private boolean isDiplomaticAuthorizationValid(Document document) {
-        return Arrays.asList(document.getData().get("ACCESS").split(", ")).contains("Arstotzka");
+    private String getNation() {
+        return documents.get(0).getNation();
+    }
+
+    private String getEntrant() {
+        return documents.get(0).getNation().equals("Arstotzka") ? "Entrants" : "Foreigners";
+    }
+
+    private boolean isDiplomaticAuthorizationValid() {
+        return Arrays.asList(diplomaticAuthorization.getData().get("ACCESS").split(", ")).contains("Arstotzka");
     }
 
     private String anyDocumentExpired() {
@@ -134,14 +133,15 @@ public class Inspector {
         } else return false;
     }
 
-    private boolean isNotAllowedNation(String nation) {
-        if (allowedCitizens != null) {
-            return !Arrays.asList(allowedCitizens).contains(nation);
-        } else return true;
+    private boolean isAllowedNation(String nation) {
+        return allowedCitizens.contains(nation);
     }
 
-    private boolean checkIsWantedCriminal(String name) {
-        return wantedCriminals.contains(name);
+    private String checkIsWantedCriminal() {
+        if (passport != null)
+            if (wantedCriminals.contains(passport.getName()))
+                return "Detainment: Entrant is a wanted criminal.";
+        return null;
     }
 
     private void updateRequiredDocuments(String info) {
@@ -153,7 +153,8 @@ public class Inspector {
 
     private void separateNations(String info) {
         if (info.contains("Allow citizens")) {
-            allowedCitizens = info.split("of ")[1].split(", ");
+            allowedCitizens.addAll(List.of(info.split("of ")[1].split(", ")));
+            allowedCitizens.add("Arstotzka");
         } else {
             if (info.contains("Deny citizens")) {
                 deniedCitizens = info.split("of ")[1].split(", ");
@@ -190,6 +191,10 @@ public class Inspector {
             return this.documentName;
         }
 
+        public String getId() {
+            return getData().get("ID#");
+        }
+
         public String getName() {
             return getData().get("NAME");
         }
@@ -213,10 +218,6 @@ public class Inspector {
                 date = "1982.11.25";
             LocalDate time = LocalDate.parse(date, formatter);
             return time.isBefore(LocalDate.parse("1982-11-22"));
-        }
-
-        public boolean fieldsDontMatch(Document document, String field) {
-            return !getData().get(field).equals(document.getData().get(field));
         }
     }
 }

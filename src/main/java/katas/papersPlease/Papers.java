@@ -6,23 +6,20 @@ import java.util.Map;
 public class Papers {
     public static void main(String[] args) {
         Inspector inspector = new Inspector();
-        inspector.receiveBulletin("Foreigners require access permit\n" +
-                "Wanted by the State: Anton Quinn");
+        inspector.receiveBulletin("Entrants require passport\n" +
+                "Allow citizens of Arstotzka\n" +
+                "Wanted by the State: Cassandra Karnov");
 
         Map<String, String> josef = new HashMap<>();
 
-        josef.put("passport", "NATION: United Federation\n" +
-                "DOB: 1956.03.10\n" +
+        josef.put("passport", "NATION: Arstotzka\n" +
+                "DOB: 1933.07.24\n" +
                 "SEX: F\n" +
-                "ISS: Shingleton\n" +
-                "ID#: EDXX5-J4CVH\n" +
-                "EXP: 1983.07.25\n" +
-                "NAME: Anderson, Ekaterina");
+                "ISS: Orvech Vonor\n" +
+                "ID#: BOGXY-FVJAU\n" +
+                "EXP: 1985.05.12\n" +
+                "NAME: Babayev, Daniela");
 
-        josef.put("diplomatic_authorization", "NATION: United Federation\n" +
-                "NAME: Anderson, Ekaterina\n" +
-                "ID#: EDXX5-J4CVH\n" +
-                "ACCESS: Arstotzka, Antegria, Impor");
         System.out.println(inspector.inspect(josef));
     }
 }
