@@ -13,7 +13,6 @@ public class Inspector {
     private Document passport;
     private Document diplomaticAuthorization;
     private boolean isNative;
-    private String id;
 
     public void receiveBulletin(String bulletin) {
         this.wantedCriminals = new ArrayList<>();
@@ -48,7 +47,6 @@ public class Inspector {
         }
 
         isNative = getFieldIfExists("NATION").equals("Arstotzka");
-        id = getFieldIfExists("ID#");
 
         String y = checkIsWantedCriminal();
         if (y != null) return y;
@@ -75,16 +73,17 @@ public class Inspector {
 
     private String checkForMismatch() {
         if (!documents.stream().allMatch(d -> {
-            if (d.getId() != null) return d.getId().equals(id);
+            if (d.getData().get("ID#") != null)
+                return d.getData().get("ID#").equals(getFieldIfExists("ID#"));
             else return true;
         })) return "Detainment: ID number mismatch.";
 
-        if (!documents.stream().allMatch(d -> d.getName().equals(getFieldIfExists("NAME"))))
+        if (!documents.stream().allMatch(d -> d.getData().get("NAME").equals(getFieldIfExists("NAME"))))
             return "Detainment: name mismatch.";
 
         if (!documents.stream().allMatch(d -> {
-            if (d.getNation() != null)
-                return d.getNation().equals(getFieldIfExists("NATION"));
+            if (d.getData().get("NATION") != null)
+                return d.getData().get("NATION").equals(getFieldIfExists("NATION"));
             else return true;
         })) return "Detainment: nationality mismatch.";
 
@@ -142,7 +141,7 @@ public class Inspector {
 
     private String checkIsWantedCriminal() {
         if (passport != null)
-            if (wantedCriminals.contains(passport.getName()))
+            if (wantedCriminals.contains(passport.getData().get("NAME")))
                 return "Detainment: Entrant is a wanted criminal.";
         return null;
     }
@@ -194,29 +193,13 @@ public class Inspector {
             return this.documentName;
         }
 
-        public String getId() {
-            return getData().get("ID#");
-        }
-
-        public String getName() {
-            return getData().get("NAME");
-        }
-
-        public String getNation() {
-            return getData().get("NATION");
-        }
-
-        public String getExpDate() {
-            return getData().get("EXP");
-        }
-
         public Map<String, String> getData() {
             return data;
         }
 
         public boolean hasDocumentExpired() {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");
-            String date = getExpDate();
+            String date = getData().get("EXP");
             if (date == null)
                 date = "1982.11.25";
             LocalDate time = LocalDate.parse(date, formatter);
