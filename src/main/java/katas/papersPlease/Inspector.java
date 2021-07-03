@@ -13,6 +13,7 @@ public class Inspector {
     private Document passport;
     private Document diplomaticAuthorization;
     private boolean isNative;
+    private Document certificateOfVaccination;
 
     public void receiveBulletin(String bulletin) {
         this.wantedCriminals = new ArrayList<>();
@@ -42,6 +43,10 @@ public class Inspector {
                 case "diplomatic authorization":
                     diplomaticAuthorization = document;
                     break;
+                case "certificate of vaccination":
+                    certificateOfVaccination = document;
+                    break;
+
             }
             documents.add(document);
         }
@@ -53,6 +58,8 @@ public class Inspector {
 
         String x = checkForMismatch();
         if (x != null) return x;
+
+        if (!isNative && passport == null) return "Entry denied: missing required passport.";
 
         String documentMissing = isDocumentMissing();
         if (documentMissing != null) return documentMissing;
@@ -91,11 +98,16 @@ public class Inspector {
     }
 
     private String isDocumentMissing() {
-        if (!isNative && passport == null)
-            return "Entry denied: missing required passport.";
         for (Map.Entry<String, String> entry : requiredDocuments.entrySet()) {
             if (documents.stream().noneMatch(doc -> doc.getDocumentName().equals(entry.getValue())))
+                System.out.println(entry.getKey());
+            System.out.println(isNative);
                 if (isNative && entry.getKey().equals("Entrants")) {
+                    System.out.println(entry.getValue());
+                    if (entry.getValue().equals("certificate of vaccination")
+                            && isVaccineInvalid())
+                        return "Entry denied: missing required vaccination";
+
                     if (entry.getValue().equals("access permit")
                             && diplomaticAuthorization != null
                             && !isDiplomaticAuthorizationValid()) {
@@ -106,6 +118,13 @@ public class Inspector {
                 }
         }
         return null;
+    }
+
+    private boolean isVaccineInvalid() {
+        String[] vaccines = certificateOfVaccination.getData().get("VACCINES").split(", ");
+        System.out.println("chujj");
+        System.out.println(Arrays.toString(vaccines));
+        return false;
     }
 
     private String getFieldIfExists(String fieldName) {
