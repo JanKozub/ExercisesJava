@@ -55,17 +55,21 @@ public class Inspector {
 
         if (!isNative && documents.get("passport") == null) return "Entry denied: missing required passport.";
 
-        if (checkForBannedNation(getFieldIfExists("NATION")))
-            return "Entry denied: citizen of banned nation.";
-
-        if (!isAllowedNation(getFieldIfExists("NATION")))
-            return "Entry denied: citizen of banned nation.";
+        if (checkForBannedNation() || !isAllowedNation())
+            if (documents.containsKey("diplomatic authorization")) {
+                if (!isDiplomaticAuthorizationValid())
+                    return "Entry denied: citizen of banned nation.";
+            } else
+                return "Entry denied: citizen of banned nation.";
 
         String documentMissing = isDocumentMissing();
         if (documentMissing != null) return documentMissing;
 
         String document = anyDocumentExpired();
         if (document != null) return document;
+
+        String vaccineStatus = checkVaccine();
+        if (vaccineStatus != null) return vaccineStatus;
 
         if (!isNative)
             return "Cause no trouble.";
@@ -93,9 +97,13 @@ public class Inspector {
 
     private String isDocumentMissing() {
         for (Map.Entry<String, String> reqDoc : requiredDocuments.entrySet()) {
-            if (!documents.containsKey(reqDoc.getValue())) {
+
+            String docName = reqDoc.getValue();
+            if (docName.contains("vaccination"))
+                docName = "certificate of vaccination";
+            if (!documents.containsKey(docName)) {
                 if (!(isNative && reqDoc.getKey().equals("Entrants"))) {
-                    switch (reqDoc.getValue()) {
+                    switch (docName) {
                         case "access permit":
                             if (documents.containsKey("grant of asylum")) continue;
                             if (isNative) continue;
@@ -106,34 +114,32 @@ public class Inspector {
                         case "ID card":
                             if (!isNative) continue;
                             break;
+                        case "work pass":
+                            if (!getFieldIfExists("PURPOSE").equals("WORK")) continue;
+                            break;
                     }
-
-                    if (reqDoc.getValue().contains("vaccination")) {
-                        if (documents.containsKey("certificate of vaccination") &&
-                                isVaccinationInvalid() &&
-                                isVaccineNation())
-                            return "Entry denied: missing required vaccination.";
-                    } else
-                        return "Entry denied: missing required " + reqDoc.getValue() + ".";
+                    return "Entry denied: missing required " + docName + ".";
                 }
             }
         }
         return null;
     }
 
-    private boolean isVaccineNation() {
-        if (vaccineNations.isEmpty())
-            return true;
-        else return vaccineNations.contains(getFieldIfExists("NATION"));
-    }
-
-    private boolean isVaccinationInvalid() {
-        String[] vaccines = documents.get("certificate of vaccination").getData().get("VACCINES").split(", ");
-        return !Arrays.asList(vaccines).containsAll(requiredVaccines);
+    private String checkVaccine() {
+        String field = getFieldIfExists("VACCINES");
+        if (field != null && (vaccineNations.isEmpty() || vaccineNations.contains(getFieldIfExists("NATION")))) {
+            ArrayList<String> vaccines = new ArrayList<>(Arrays.asList(getFieldIfExists("VACCINES").split(", ")));
+            for (String v : requiredVaccines) {
+                if (!vaccines.contains(v)) {
+                    return "Entry denied: missing required vaccination.";
+                }
+            }
+        }
+        return null;
     }
 
     private boolean isDiplomaticAuthorizationValid() {
-        String[] countries = documents.get("diplomatic authorization").getData().get("ACCESS").split(", ");
+        String[] countries = getFieldIfExists("ACCESS").split(", ");
         return Arrays.asList(countries).contains("Arstotzka");
     }
 
@@ -152,15 +158,15 @@ public class Inspector {
         return null;
     }
 
-    private boolean checkForBannedNation(String nation) {
+    private boolean checkForBannedNation() {
         if (deniedCitizens != null) {
-            return Arrays.asList(deniedCitizens).contains(nation);
+            return Arrays.asList(deniedCitizens).contains(getFieldIfExists("NATION"));
         } else return false;
     }
 
-    private boolean isAllowedNation(String nation) {
+    private boolean isAllowedNation() {
         if (!allowedCitizens.isEmpty())
-            return allowedCitizens.contains(nation);
+            return allowedCitizens.contains(getFieldIfExists("NATION"));
         return true;
     }
 
