@@ -8,7 +8,7 @@ public class Inspector {
     private ArrayList<String> allowedCitizens;
     private String[] deniedCitizens;
     private List<String> wantedCriminals;
-    private Map<String, String> requiredDocuments;
+    private ArrayList<String[]> requiredDocuments;
     private Map<String, Document> documents;
     private boolean isNative;
     private ArrayList<String> requiredVaccines;
@@ -18,7 +18,7 @@ public class Inspector {
     public void receiveBulletin(String bulletin) {
         this.allowedCitizens = new ArrayList<>();
         this.wantedCriminals = new ArrayList<>();
-        this.requiredDocuments = new HashMap<>();
+        this.requiredDocuments = new ArrayList<>();
         this.requiredVaccines = new ArrayList<>();
         this.vaccineNations = new ArrayList<>();
         counter++;
@@ -42,8 +42,8 @@ public class Inspector {
             documents.put(entry.getKey().replaceAll("_", " "), document);
         }
 
-        if (requiredDocuments.containsValue("ID card"))
-            requiredDocuments.put("Foreigners", "access permit");
+        if (isDocumentRequired("ID card"))
+            requiredDocuments.add(new String[]{"Foreigners", "access permit"});
 
         this.isNative = getFieldIfExists("NATION").equals("Arstotzka");
 
@@ -59,7 +59,7 @@ public class Inspector {
             if (documents.containsKey("diplomatic authorization")) {
                 if (!isDiplomaticAuthorizationValid())
                     return "Entry denied: citizen of banned nation.";
-            } else
+            } else if (!documents.containsKey("access_permit"))
                 return "Entry denied: citizen of banned nation.";
 
         String documentMissing = isDocumentMissing();
@@ -96,13 +96,14 @@ public class Inspector {
     }
 
     private String isDocumentMissing() {
-        for (Map.Entry<String, String> reqDoc : requiredDocuments.entrySet()) {
+        for (String[] reqDoc : requiredDocuments) {
 
-            String docName = reqDoc.getValue();
-            if (docName.contains("vaccination"))
+            String docName = reqDoc[1];
+            if (docName.contains("vaccination")) {
                 docName = "certificate of vaccination";
+            }
             if (!documents.containsKey(docName)) {
-                if (!(isNative && reqDoc.getKey().equals("Entrants"))) {
+                if (!(isNative && reqDoc[0].equals("Entrants"))) {
                     switch (docName) {
                         case "access permit":
                             if (documents.containsKey("grant of asylum")) continue;
@@ -123,6 +124,14 @@ public class Inspector {
             }
         }
         return null;
+    }
+
+    private boolean isDocumentRequired(String name) {
+        for (String[] s : requiredDocuments) {
+            if (s[1].equals(name))
+                return true;
+        }
+        return false;
     }
 
     private String checkVaccine() {
@@ -180,9 +189,11 @@ public class Inspector {
     private void updateRequiredDocuments(String info) {
         if (info.contains("require")) {
             String[] strings = info.split(" require ");
-            requiredDocuments.put(strings[0], strings[1]);
+            requiredDocuments.add(new String[]{strings[0], strings[1]});
             if (strings[1].contains("vaccination")) {
-                requiredVaccines.add(strings[1].split(" ")[0]);
+                strings[1] = strings[1].replace("vaccination", "");
+                strings[1] = strings[1].substring(0, strings[1].length() - 1);
+                requiredVaccines.add(strings[1]);
                 if (strings[0].contains("Citizens"))
                     vaccineNations.addAll(Arrays.asList(strings[0].split("of ")[1].split(", ")));
             }
