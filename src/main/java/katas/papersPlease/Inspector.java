@@ -5,30 +5,22 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Inspector {
-    private ArrayList<String> allowedCitizens;
-    private String[] deniedCitizens;
+    private final ArrayList<String> allowedNations = new ArrayList<>();
     private List<String> wantedCriminals;
-    private ArrayList<String[]> requiredDocuments;
+    private final Map<String, ArrayList<String>> requiredDocuments = new HashMap<>();
     private Map<String, Document> documents;
     private boolean isNative;
-    private ArrayList<String> requiredVaccines;
-    private ArrayList<String> vaccineNations;
     private int counter = 0;
 
     public void receiveBulletin(String bulletin) {
-        this.allowedCitizens = new ArrayList<>();
         this.wantedCriminals = new ArrayList<>();
-        this.requiredDocuments = new ArrayList<>();
-        this.requiredVaccines = new ArrayList<>();
-        this.vaccineNations = new ArrayList<>();
         counter++;
-        String[] infos = bulletin.split("\n");
 
         System.out.println("\nNew day nr." + counter + ": \n");
-        for (String info : infos) {
+        for (String info : bulletin.split("\n")) {
             System.out.println(info);
             updateRequiredDocuments(info);
-            separateNations(info);
+            getNations(info);
             getWantedCriminals(info);
         }
     }
@@ -37,43 +29,57 @@ public class Inspector {
         this.documents = new HashMap<>();
         System.out.println("\nPerson:\n" + person);
 
-        for (Map.Entry<String, String> entry : person.entrySet()) {
-            Document document = new Document(entry.getValue());
-            documents.put(entry.getKey().replaceAll("_", " "), document);
-        }
-
-        if (isDocumentRequired("ID card"))
-            requiredDocuments.add(new String[]{"Foreigners", "access permit"});
+        getDocuments(person);
+        System.out.println(requiredDocuments);
 
         this.isNative = getFieldIfExists("NATION").equals("Arstotzka");
 
-        String y = checkIsWantedCriminal();
-        if (y != null) return y;
+        checkVaccine();
 
-        String x = checkForMismatch();
-        if (x != null) return x;
+        String reason = checkIsWantedCriminal();
+        if (reason != null) return reason;
 
-        if (!isNative && documents.get("passport") == null) return "Entry denied: missing required passport.";
+        reason = checkForMismatch();
+        if (reason != null) return reason;
 
-        if (checkForBannedNation() || !isAllowedNation())
-            if (documents.containsKey("diplomatic authorization")) {
-                if (!isDiplomaticAuthorizationValid())
-                    return "Entry denied: citizen of banned nation.";
-            } else if (!documents.containsKey("access_permit"))
-                return "Entry denied: citizen of banned nation.";
+        if (doesForeignHavePassport())
+            return "Entry denied: missing required passport.";
 
-        String documentMissing = isDocumentMissing();
-        if (documentMissing != null) return documentMissing;
+        if (isCitizenOfBannedNation())
+            return "Entry denied: citizen of banned nation.";
 
-        String document = anyDocumentExpired();
-        if (document != null) return document;
+        reason = isDocumentMissing();
+        if (reason != null) return reason;
 
-        String vaccineStatus = checkVaccine();
-        if (vaccineStatus != null) return vaccineStatus;
+        reason = anyDocumentExpired();
+        if (reason != null) return reason;
+
+        reason = checkVaccine();
+        if (reason != null) return reason;
+
+        if (requiredDocuments.values().stream().anyMatch(v -> v.contains("Workers")) &&
+                getFieldIfExists("PURPOSE").equals("WORK") &&
+                documents.get("work pass") == null)
+            return "Entry denied: missing required work pass.";
 
         if (!isNative)
             return "Cause no trouble.";
         return "Glory to Arstotzka.";
+    }
+
+    private boolean isCitizenOfBannedNation() {
+        return !allowedNations.contains(getFieldIfExists("NATION"));
+    }
+
+    private void getDocuments(Map<String, String> person) {
+        for (Map.Entry<String, String> entry : person.entrySet()) {
+            Document document = new Document(entry.getValue());
+            documents.put(entry.getKey().replaceAll("_", " "), document);
+        }
+    }
+
+    private boolean doesForeignHavePassport() {
+        return !isNative && documents.get("passport") == null;
     }
 
     private String checkForMismatch() {
@@ -96,14 +102,15 @@ public class Inspector {
     }
 
     private String isDocumentMissing() {
-        for (String[] reqDoc : requiredDocuments) {
-
-            String docName = reqDoc[1];
+        for (Map.Entry<String, ArrayList<String>> entry : requiredDocuments.entrySet()) {
+            String docName = entry.getKey();
             if (docName.contains("vaccination")) {
                 docName = "certificate of vaccination";
             }
             if (!documents.containsKey(docName)) {
-                if (!(isNative && reqDoc[0].equals("Entrants"))) {
+                if ((!isNative && entry.getValue().contains("Foreigners")) ||
+                        entry.getValue().stream().anyMatch(f -> f.equals(getFieldIfExists("NATION"))) ||
+                        entry.getValue().contains("Entrants")) {
                     switch (docName) {
                         case "access permit":
                             if (documents.containsKey("grant of asylum")) continue;
@@ -111,9 +118,8 @@ public class Inspector {
                             if (documents.containsKey("diplomatic authorization"))
                                 if (isDiplomaticAuthorizationValid()) continue;
                                 else return "Entry denied: invalid diplomatic authorization.";
-                            break;
-                        case "ID card":
-                            if (!isNative) continue;
+                            if (getFieldIfExists("PURPOSE").equals("WORK") && !documents.containsKey("work pass"))
+                                return "Entry denied: missing required work pass.";
                             break;
                         case "work pass":
                             if (!getFieldIfExists("PURPOSE").equals("WORK")) continue;
@@ -126,21 +132,16 @@ public class Inspector {
         return null;
     }
 
-    private boolean isDocumentRequired(String name) {
-        for (String[] s : requiredDocuments) {
-            if (s[1].equals(name))
-                return true;
-        }
-        return false;
-    }
-
     private String checkVaccine() {
-        String field = getFieldIfExists("VACCINES");
-        if (field != null && (vaccineNations.isEmpty() || vaccineNations.contains(getFieldIfExists("NATION")))) {
-            ArrayList<String> vaccines = new ArrayList<>(Arrays.asList(getFieldIfExists("VACCINES").split(", ")));
-            for (String v : requiredVaccines) {
-                if (!vaccines.contains(v)) {
-                    return "Entry denied: missing required vaccination.";
+        for (Map.Entry<String, ArrayList<String>> entry : requiredDocuments.entrySet()) {
+            if (entry.getKey().contains("vaccination")) {
+                String vaccine = entry.getKey().replace(" vaccination", "");
+                if ((!isNative && entry.getValue().contains("Foreigners")) ||
+                        entry.getValue().stream().anyMatch(f -> f.equals(getFieldIfExists("NATION"))) ||
+                        entry.getValue().contains("Entrants")) {
+                    if (!Arrays.asList(getFieldIfExists("VACCINES").split(", ")).contains(vaccine)) {
+                        return "Entry denied: missing required vaccination.";
+                    }
                 }
             }
         }
@@ -167,18 +168,6 @@ public class Inspector {
         return null;
     }
 
-    private boolean checkForBannedNation() {
-        if (deniedCitizens != null) {
-            return Arrays.asList(deniedCitizens).contains(getFieldIfExists("NATION"));
-        } else return false;
-    }
-
-    private boolean isAllowedNation() {
-        if (!allowedCitizens.isEmpty())
-            return allowedCitizens.contains(getFieldIfExists("NATION"));
-        return true;
-    }
-
     private String checkIsWantedCriminal() {
         if (documents.get("passport") != null)
             if (wantedCriminals.contains(documents.get("passport").getData().get("NAME")))
@@ -187,27 +176,25 @@ public class Inspector {
     }
 
     private void updateRequiredDocuments(String info) {
-        if (info.contains("require")) {
-            String[] strings = info.split(" require ");
-            requiredDocuments.add(new String[]{strings[0], strings[1]});
-            if (strings[1].contains("vaccination")) {
-                strings[1] = strings[1].replace("vaccination", "");
-                strings[1] = strings[1].substring(0, strings[1].length() - 1);
-                requiredVaccines.add(strings[1]);
-                if (strings[0].contains("Citizens"))
-                    vaccineNations.addAll(Arrays.asList(strings[0].split("of ")[1].split(", ")));
-            }
+        info = info.replace("Citizens of ", "");
+
+
+        if (info.contains("no longer")) {
+            String[] infos = info.split(" no longer require ");
+            ArrayList<String> val = requiredDocuments.get(infos[1]);
+            val.removeAll(List.of((infos[0].split(", "))));
+            requiredDocuments.replace(infos[1], val);
+        } else if (info.contains("require")) {
+            String[] infos = info.split(" require ");
+            requiredDocuments.put(infos[1], new ArrayList<>(List.of((infos[0].split(", ")))));
         }
     }
 
-    private void separateNations(String info) {
+    private void getNations(String info) {
         if (info.contains("Allow citizens")) {
-            allowedCitizens.addAll(List.of(info.split("of ")[1].split(", ")));
-            allowedCitizens.add("Arstotzka");
-        } else {
-            if (info.contains("Deny citizens")) {
-                deniedCitizens = info.split("of ")[1].split(", ");
-            }
+            allowedNations.addAll(Arrays.asList(info.split("citizens of ")[1].split(", ")));
+        } else if (info.contains("Deny citizens")) {
+            allowedNations.removeAll(Arrays.asList(info.split("citizens of ")[1].split(", ")));
         }
     }
 
