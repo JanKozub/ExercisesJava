@@ -22,7 +22,8 @@ public class Papers {
 
         inspector.receiveBulletin("Deny citizens of Republia\n" +
                 "Entrants require cowpox vaccination\n" +
-                "Wanted by the State: Elena Lang");
+                "Wanted by the State: Elena Lang\n" +
+                "Entrants require certificate of vaccination\n");
 
         Map<String, String> josef = new HashMap<>();
 
