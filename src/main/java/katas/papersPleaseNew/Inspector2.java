@@ -5,6 +5,27 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Inspector2 {
+    public static final String FIELD_ID = "ID#";
+    public static final String FIELD_NAME = "NAME";
+    public static final String FIELD_NATION = "NATION";
+    public static final String FIELD_PURPOSE = "PURPOSE";
+    public static final String FIELD_VACCINES = "VACCINES";
+    public static final String FIELD_ACCESS = "ACCESS";
+    public static final String FIELD_EXPIRED = "EXP";
+
+    public static final String VALUE_WORK = "WORK";
+    public static final String VALUE_ENTRANTS = "Entrants";
+    public static final String VALUE_FOREIGNERS = "Foreigners";
+
+    public static final String DOC_PASSPORT = "passport";
+    public static final String DOC_CERTIFICATE_OF_VACCINATION = "certificate of vaccination";
+    public static final String DOC_ACCESS_PERMIT = "access permit";
+    public static final String DOC_GRANT_OF_ASYLUM = "grant of asylum";
+    public static final String DOC_DIPLOMATIC_AUTHORIZATION = "diplomatic authorization";
+    public static final String DOC_WORK_PASS = "work pass";
+
+    public static final String HOME_COUNTRY = "Arstotzka";
+
     private final ArrayList<String> allowedNations = new ArrayList<>();
     private final List<String> wantedCriminals = new ArrayList<>();
     private final Map<String, ArrayList<String>> requiredDocuments = new HashMap<>();
@@ -65,20 +86,20 @@ public class Inspector2 {
     }
 
     private String checkForMismatch(UserData userData) {
-        if (userData.allFieldsMatch("ID#"))
+        if (userData.allFieldsMatch(FIELD_ID))
             return "Detainment: ID number mismatch.";
 
-        if (userData.allFieldsMatch("NAME"))
+        if (userData.allFieldsMatch(FIELD_NAME))
             return "Detainment: name mismatch.";
 
-        if (userData.allFieldsMatch("NATION"))
+        if (userData.allFieldsMatch(FIELD_NATION))
             return "Detainment: nationality mismatch.";
 
         return null;
     }
 
     private String checkForPassport(UserData userData) {
-        if (!userData.isNative() && userData.hasDocument("passport"))
+        if (!userData.isNative() && userData.hasDocument(DOC_PASSPORT))
             return "Entry denied: missing required passport.";
         return null;
     }
@@ -92,22 +113,22 @@ public class Inspector2 {
     private String checkForMissingDocument(UserData userData) {
         for (Map.Entry<String, ArrayList<String>> entry : requiredDocuments.entrySet()) {
             String docName = entry.getKey();
-            if (docName.contains("vaccination")) docName = "certificate of vaccination";
+            if (docName.contains("vaccination")) docName = DOC_CERTIFICATE_OF_VACCINATION;
 
             if (!userData.hasDocument(docName) && userData.doesEntryApplyToUser(entry.getValue())) {
                 switch (docName) {
-                    case "access permit":
+                    case DOC_ACCESS_PERMIT:
                         if (userData.isNative()) continue;
-                        if (userData.hasDocument("grant of asylum")) continue;
-                        if (userData.hasDocument("diplomatic authorization"))
+                        if (userData.hasDocument(DOC_GRANT_OF_ASYLUM)) continue;
+                        if (userData.hasDocument(DOC_DIPLOMATIC_AUTHORIZATION))
                             if (isDiplomaticAuthorizationValid(userData)) continue;
                             else return "Entry denied: invalid diplomatic authorization.";
-                        if (userData.containsFieldWithValue("PURPOSE", "WORK")
-                                && !userData.hasDocument("work pass"))
+                        if (userData.containsFieldWithValue(FIELD_PURPOSE, VALUE_WORK)
+                                && !userData.hasDocument(DOC_WORK_PASS))
                             return "Entry denied: missing required work pass.";
                         break;
-                    case "work pass":
-                        if (!userData.containsFieldWithValue("PURPOSE", "WORK")) continue;
+                    case DOC_WORK_PASS:
+                        if (!userData.containsFieldWithValue(FIELD_PURPOSE, VALUE_WORK)) continue;
                         break;
                 }
                 return "Entry denied: missing required " + docName + ".";
@@ -130,7 +151,7 @@ public class Inspector2 {
             if (key.contains("vaccination")) {
                 String vaccine = key.replace(" vaccination", "");
                 if (userData.doesEntryApplyToUser(entry.getValue())) {
-                    if (!userData.getFieldFromAnyDocumentAsList("VACCINES").contains(vaccine)) {
+                    if (!userData.getFieldFromAnyDocumentAsList(FIELD_VACCINES).contains(vaccine)) {
                         return "Entry denied: missing required vaccination.";
                     }
                 }
@@ -141,8 +162,8 @@ public class Inspector2 {
 
     private String checkForWorkpass(UserData userData) {
         if (requiredDocuments.values().stream().anyMatch(v -> v.contains("Workers")) &&
-                userData.containsFieldWithValue("PURPOSE", "WORK") &&
-                userData.hasDocument("work pass"))
+                userData.containsFieldWithValue(FIELD_PURPOSE, VALUE_WORK) &&
+                userData.hasDocument(DOC_WORK_PASS))
             return "Entry denied: missing required work pass.";
         return null;
     }
@@ -152,9 +173,7 @@ public class Inspector2 {
 
         if (info.contains("no longer")) {
             String[] infos = info.split(" no longer require ");
-            ArrayList<String> val = requiredDocuments.get(infos[1]);
-            val.removeAll(List.of((infos[0].split(", "))));
-            requiredDocuments.replace(infos[1], val);
+            requiredDocuments.get(infos[1]).removeAll(List.of((infos[0].split(", "))));
         } else if (info.contains("require")) {
             String[] infos = info.split(" require ");
             requiredDocuments.put(infos[1], new ArrayList<>(List.of((infos[0].split(", ")))));
@@ -180,14 +199,15 @@ public class Inspector2 {
     }
 
     private boolean isDiplomaticAuthorizationValid(UserData userData) {
-        Collection<String> countries = userData.getFieldFromAnyDocumentAsList("ACCESS");
-        return countries.contains("Arstotzka");
+        Collection<String> countries = userData.getFieldFromAnyDocumentAsList(FIELD_ACCESS);
+        return countries.contains(HOME_COUNTRY);
     }
 
     static class UserData {
         private final Map<String, Document> documents = new HashMap<>();
         private final boolean isNative;
         private final String nation;
+        private final String name;
 
         public UserData(Map<String, String> person) {
             for (Map.Entry<String, String> entry : person.entrySet()) {
@@ -195,12 +215,17 @@ public class Inspector2 {
                 documents.put(name, new Document(name, entry.getValue()));
             }
 
-            this.nation = getFieldFromAnyDocument("NATION").orElse("");
-            this.isNative = nation.equals("Arstotzka");
+            this.nation = getFieldFromAnyDocument(FIELD_NATION).orElse("");
+            this.isNative = nation.equals(HOME_COUNTRY);
+            this.name = getFieldFromAnyDocument(FIELD_NAME).orElse("");
         }
 
         public Collection<Document> getDocuments() {
             return documents.values();
+        }
+
+        public String getName() {
+            return name;
         }
 
         public boolean hasDocument(String documentName) {
@@ -213,10 +238,6 @@ public class Inspector2 {
 
         public String getNation() {
             return nation;
-        }
-
-        public String getName() {
-            return getFieldFromAnyDocument("NAME").orElse("");
         }
 
         private Optional<String> getFieldFromAnyDocument(String fieldName) {
@@ -239,9 +260,9 @@ public class Inspector2 {
         }
 
         private boolean doesEntryApplyToUser(List<String> entry) {
-            return (!isNative && entry.contains("Foreigners")) ||
+            return (!isNative && entry.contains(VALUE_FOREIGNERS)) ||
                     entry.contains(nation) ||
-                    entry.contains("Entrants");
+                    entry.contains(VALUE_ENTRANTS);
         }
 
         private Collection<String> getFieldFromAnyDocumentAsList(String fieldName) {
@@ -276,9 +297,7 @@ public class Inspector2 {
 
         public boolean hasDocumentExpired() {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");
-            String date = getField("EXP");
-            if (date == null)
-                date = "1982.11.25";
+            String date = data.getOrDefault(FIELD_EXPIRED, "1982.11.25");
             LocalDate time = LocalDate.parse(date, formatter);
             return time.isBefore(LocalDate.parse("1982-11-22"));
         }
