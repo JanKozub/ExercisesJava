@@ -1,0 +1,2 @@
+# ExercisesJava
+Codewars etc.
